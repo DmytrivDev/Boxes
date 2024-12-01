@@ -64,15 +64,22 @@
   &__lang {
     position: relative;
     margin-left: 1.5625rem;
-    width: 5.9375rem;
     flex-shrink: 0;
-    height: 100%;
 
     & > li {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
+      width: 5.9375rem;
+      padding: 1.035rem 1.125rem 1.035rem 1.4375rem;
+      border-radius: 0.5rem;
+      border: 0.125rem solid var(--ch);
+      background-color: var(--cw);
+    }
+    a {
+      display: block;
+      color: var(--cg);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
     }
 
     &:hover {

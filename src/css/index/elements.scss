@@ -36,10 +36,13 @@
   letter-spacing: -0.04em;
   background-color: var(--cr);
   text-transform: uppercase;
-  border: 0.0625rem solid transparent;
+  border: 0.125rem solid transparent;
   transition: all 0.15s ease-in;
 
   &:hover {
+    border-color: var(--cr);
+    color: var(--cr);
+    background-color: var(--cw);
   }
 }
 
