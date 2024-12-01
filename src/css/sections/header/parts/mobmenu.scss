@@ -11,20 +11,39 @@
     bottom: 0;
     right: 0;
     z-index: 100;
-    width: 100%;
+    width: calc(100% - 3.45rem);
     height: 100vh;
     background-color: var(--cw);
-    transform: translateY(-100%);
+    transform: translateX(calc(-100% - 3.45rem));
     -webkit-overflow-scrolling: touch;
 
     -webkit-transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
 
-    &.isOpened {
-      transform: translateY(0);
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(61, 53, 58, 0.3);
+      width: calc(100% + 3.45rem);
+      height: 100%;
     }
 
+    &.isOpened {
+      transform: translateX(0);
+    }
+
+    &__wrapp {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--cw);
+    }
     &__body {
       overflow-y: auto;
     }

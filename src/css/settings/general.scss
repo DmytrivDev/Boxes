@@ -1,11 +1,11 @@
 html,
 body {
   font-optical-sizing: auto;
-  font-family: var(--ff);
+  font-family: var(--GolosText);
   background-color: var(--cw);
   color: var(--cm);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 
 .overhide {
@@ -22,11 +22,11 @@ body {
 
 .main {
   flex: 1 1 auto;
-  padding-bottom: 4rem;
+  padding-bottom: 8.125rem;
 }
 
 [class*="__container"] {
-  max-width: 85rem;
+  max-width: 102.5rem;
   padding: 0 2.5em;
   margin: 0 auto;
 }
@@ -49,22 +49,13 @@ body {
   }
 
   [class*="__container"] {
-    padding: 0 1.25em;
+    padding: 0 1em;
   }
 
   .main {
-    padding-bottom: 5rem;
+    padding-bottom: 2.5rem;
   }
 }
-
-/* --------- Adaptive desktop (772px) --------- */
-
-// @media screen and (max-width: 772px) {
-//   html,
-//   body {
-//     font-size: 2.07vw;
-//   }
-// }
 
 /* --------- Adaptive desktop (500px) --------- */
 

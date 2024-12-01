@@ -1,5 +1,99 @@
-@media screen and (max-width: 960px) {
+.header__main {
   .navmenu {
+    &__nav {
+    }
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 1.875rem;
+
+      .menu-item {
+        position: relative;
+
+        &.menu-item-has-children {
+          a {
+            color: var(--cm);
+          }
+          & > a {
+            span {
+              position: relative;
+              top: -0.5em;
+              font-size: 0.625rem;
+            }
+          }
+        }
+        a {
+          width: fit-content;
+          white-space: nowrap;
+          text-wrap: nowrap;
+          display: block;
+          color: var(--cg);
+          font-size: 0.875rem;
+          font-weight: 500;
+          line-height: 1.2;
+          letter-spacing: -0.04em;
+          text-transform: uppercase;
+          transition: all 0.15s ease-in;
+          &:hover {
+            color: var(--cr);
+          }
+        }
+        &:hover {
+          & > a {
+            color: var(--cr);
+          }
+          .sub-menu {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        .sub-menu {
+          display: flex;
+          flex-direction: column;
+          gap: 0.9375rem;
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          z-index: 2;
+          transform: translateY(2.56rem);
+          top: 100%;
+          left: -1.3125rem;
+          background-color: var(--cw);
+          padding: 1.875rem 1.25rem;
+          border-radius: 0 0 0.5rem 0.5rem;
+          border: 0.0625rem solid var(--ch);
+          border-top: none;
+          transition: all 0.15s ease-in;
+          &::before {
+            content: "";
+            position: absolute;
+            top: -2.56rem;
+            left: 0;
+            width: 100%;
+            height: 2.56rem;
+          }
+        }
+      }
+    }
+
+    &__lang {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header__main {
+    .navmenu {
+      display: none;
+    }
+  }
+
+  .mobmenu {
+    .navmenu {
+      padding: 1.875rem 0 5.875rem 0;
+    }
   }
 }
 

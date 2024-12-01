@@ -1,10 +1,43 @@
-// @font-face {
-//   font-family: "family";
-//   src:
-//     url("../../fonts/family/family.eot") format("eot"),
-//     url("../../fonts/family/family.woff2") format("woff2"),
-//     url("../../fonts/family/family.ttf") format("truetype");
-//   font-display: swap;
-//   font-style: normal;
-//   font-weight: 400;
-// }
+@font-face {
+  font-family: "GolosText";
+  src:
+    url("../../fonts/Regular/GolosText-Regular.eot") format("eot"),
+    url("../../fonts/Regular/GolosText-Regular.woff2") format("woff2"),
+    url("../../fonts/Regular/GolosText-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GolosText";
+  src:
+    url("../../fonts/Medium/GolosText-Medium.eot") format("eot"),
+    url("../../fonts/Medium/GolosText-Medium.woff2") format("woff2"),
+    url("../../fonts/Medium/GolosText-Medium.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gunterz";
+  src:
+    url("../../fonts/Medium/Gunterz-Medium.eot") format("eot"),
+    url("../../fonts/Medium/Gunterz-Medium.woff2") format("woff2"),
+    url("../../fonts/Medium/Gunterz-Medium.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Ermilov";
+  src:
+    url("../../fonts/Bold/Ermilov-Bold.eot") format("eot"),
+    url("../../fonts/Bold/Ermilov-Bold.woff2") format("woff2"),
+    url("../../fonts/Bold/Ermilov-Bold.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}

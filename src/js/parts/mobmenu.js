@@ -31,6 +31,7 @@ function toggleMenu() {
   if (burger && mobMenu) {
     burger.classList.toggle('isOpened');
     mobMenu.classList.toggle('isOpened');
+    headerMain.classList.toggle('addBorder');
     toggleScrollLock();
   }
 }
@@ -39,6 +40,7 @@ function closeMenu() {
   if (burger && mobMenu) {
     burger.classList.remove('isOpened');
     mobMenu.classList.remove('isOpened');
+    headerMain.classList.remove('addBorder');
     if (mobMenuBody) scrollLock.enablePageScroll(mobMenuBody);
     isScrollLocked = false;
   }

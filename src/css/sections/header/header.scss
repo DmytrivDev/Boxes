@@ -1,7 +1,104 @@
 .header {
+  position: fixed;
+  z-index: 90;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: var(--cw);
+
   &__main {
     position: relative;
     z-index: 110;
+    padding: 1.25rem 0;
+    border-bottom: 0.125rem solid var(--ch);
+    transition: all 0.15s ease-in;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 3.45rem);
+      height: 0.125rem;
+      background-color: transparent;
+      transform: translateY(100%);
+      transition: all 0.3s ease-in;
+    }
+    &.addBorder {
+      border-bottom: 0.125rem solid transparent;
+      &::before {
+        background-color: var(--ch);
+      }
+    }
+  }
+  &__container {
+    max-width: 112.5rem;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__box {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__tel {
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+    a {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      transition: all 0.15s ease-in;
+      &:hover {
+        color: var(--cr);
+      }
+    }
+  }
+
+  &__lang {
+    position: relative;
+    margin-left: 1.5625rem;
+    width: 5.9375rem;
+    flex-shrink: 0;
+    height: 100%;
+
+    & > li {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      .sub-menu {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .sub-menu {
+      // visibility: hidden;
+      // opacity: 0;
+      position: absolute;
+      z-index: 2;
+      top: 100%;
+    }
+  }
+
+  .custom-logo-link {
+    width: 6.625rem;
+    display: block;
+    margin-right: 4rem;
+    position: relative;
+    top: -0.4rem;
+  }
+
+  .btn-def {
   }
 }
 
@@ -11,30 +108,80 @@
 
 @media screen and (max-width: 960px) {
   .header {
+    &__main {
+      padding: 0.625rem 0;
+    }
+
+    &__box {
+      margin-left: 0;
+      margin-right: 3.15rem;
+    }
+
+    &__tel {
+      margin-right: 0.625rem;
+      a {
+        background-color: var(--cw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.875rem;
+        height: 1.875rem;
+        border-radius: 0.5rem;
+        border: 0.125rem solid var(--ch);
+        span {
+          width: 1.25rem;
+        }
+        &:hover {
+          color: var(--cr);
+        }
+      }
+    }
+
+    &__lang {
+      display: none;
+    }
+
+    .custom-logo-link {
+      width: 3.8125rem;
+      margin-right: auto;
+      top: 0;
+    }
+
+    .btn-def {
+      padding: 0.4375rem 0.875rem;
+    }
   }
 
   .burger {
     display: block;
-    position: relative;
-    width: 1.6875rem;
-    height: 1.3125rem;
-    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1.875rem;
+    height: 0.625rem;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 
     span {
       position: absolute;
       left: 50%;
       top: 50%;
       width: 100%;
-      height: 0.1875rem;
+      height: 0.125rem;
       background-color: var(--cm);
-      transform: translateX(-50%) translateY(-25%) rotate(0);
+      transform: translateX(-50%) translateY(-50%) rotate(0);
 
       -webkit-transition: all 0.2s ease-in;
       -o-transition: all 0.2s ease-in;
       transition: all 0.2s ease-in;
       &:first-child {
         top: 0;
-        transform: translateX(-50%) translateY(0%);
+        left: auto;
+        right: 0;
+        transform: translateX(0%) translateY(0%);
+        width: 0.8125rem;
       }
       &:last-child {
         top: 100%;
@@ -43,17 +190,19 @@
     }
 
     &.isOpened {
+      width: 1.375rem;
+      height: 1.375rem;
       span {
+        border-radius: 0.625rem;
+        background-color: var(--cw);
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
         top: 50%;
-        transform: translateX(-70%);
-        opacity: 0;
         &:first-child {
-          transform: translateX(-50%) translateY(-50%) rotate(45deg);
-          opacity: 1;
+          transform: translateX(0%) translateY(-50%) rotate(-45deg);
+          opacity: 0;
         }
         &:last-child {
           transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-          opacity: 1;
         }
       }
     }
