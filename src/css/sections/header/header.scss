@@ -19,12 +19,12 @@
       left: 0;
       width: calc(100% - 3.45rem);
       height: 0.125rem;
-      background-color: transparent;
       transform: translateY(100%);
+      background-color: transparent;
       transition: all 0.3s ease-in;
     }
     &.addBorder {
-      border-bottom: 0.125rem solid transparent;
+      border-color: transparent;
       &::before {
         background-color: var(--ch);
       }
@@ -67,33 +67,88 @@
     flex-shrink: 0;
 
     & > li {
-      width: 5.9375rem;
+      min-width: 5.9375rem;
       padding: 1.035rem 1.125rem 1.035rem 1.4375rem;
       border-radius: 0.5rem;
       border: 0.125rem solid var(--ch);
       background-color: var(--cw);
-    }
-    a {
-      display: block;
-      color: var(--cg);
-      font-size: 0.8125rem;
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: -0.04em;
-    }
+      transition: all 0.15s ease-in;
+      & > a {
+        &::after {
+          content: "";
+          flex-shrink: 0;
+          width: 0.5625rem;
+          height: 0.3438rem;
+          background-size: 0.5625rem 0.3438rem;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-image: var(--vectorLangD);
+          transition: all 0.15s ease-in;
+        }
+      }
+      a {
+        color: var(--cg);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        transition: all 0.15s ease-in;
+      }
+      &:hover {
+        border-radius: 0.5rem 0.5rem 0 0;
+        border: 0.125rem solid var(--ch);
+        border-bottom: 0.125rem solid transparent;
 
-    &:hover {
-      .sub-menu {
-        visibility: visible;
-        opacity: 1;
+        .sub-menu {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(-15%);
+        }
+        & > a {
+          &::after {
+            background-image: var(--vectorLangH);
+            transform: rotate(-180deg);
+          }
+        }
       }
     }
+
     .sub-menu {
-      // visibility: hidden;
-      // opacity: 0;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-40%);
       position: absolute;
       z-index: 2;
       top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      padding: 0 1.125rem 0.75rem 1.4375rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4375rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+      border: 0.125rem solid var(--ch);
+      border-top: 0;
+      background-color: var(--cw);
+      transition: all 0.15s ease-in;
+
+      li {
+        &.current-lang {
+          a {
+            color: var(--cr);
+          }
+        }
+      }
+      a {
+        &:hover {
+          color: var(--cr);
+        }
+      }
     }
   }
 

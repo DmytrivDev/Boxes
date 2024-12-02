@@ -4,8 +4,14 @@
     }
     &__list {
       display: flex;
-      align-items: center;
-      gap: 1.875rem;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.875rem;
+
+      .current-menu-item {
+        a {
+          color: var(--cr) !important;
+        }
+      }
 
       .menu-item {
         position: relative;
@@ -15,10 +21,9 @@
             color: var(--cm);
           }
           & > a {
-            span {
-              position: relative;
-              top: -0.5em;
+            sub {
               font-size: 0.625rem;
+              vertical-align: 45%;
             }
           }
         }
@@ -38,6 +43,7 @@
             color: var(--cr);
           }
         }
+
         &:hover {
           & > a {
             color: var(--cr);
@@ -56,7 +62,7 @@
           opacity: 0;
           position: absolute;
           z-index: 2;
-          transform: translateY(2.45rem);
+          transform: translateY(2.35rem);
           top: 100%;
           left: -1.3125rem;
           background-color: var(--cw);
@@ -68,10 +74,10 @@
           &::before {
             content: "";
             position: absolute;
-            top: -2.45rem;
+            top: -2.35rem;
             left: 0;
             width: 100%;
-            height: 2.45rem;
+            height: 2.35rem;
           }
         }
       }
@@ -92,7 +98,123 @@
 
   .mobmenu {
     .navmenu {
-      padding: 1.875rem 0 5.875rem 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      gap: 2.5rem;
+      padding: 0.75rem 0 5.5rem 0;
+
+      &__nav {
+        flex: 1 1 auto;
+      }
+      &__list {
+        .current-menu-item {
+          a {
+            color: var(--cr) !important;
+          }
+        }
+
+        .menu-item {
+          position: relative;
+          border-bottom: 0.125rem solid var(--ch);
+          &:last-child {
+            border: none;
+          }
+
+          &.menu-item-has-children {
+            &.isOpened {
+              & > a {
+                color: var(--cr);
+                &::after {
+                  background-image: var(--vectorLangH);
+                  transform: translateY(-50%) rotate(-180deg);
+                }
+              }
+            }
+
+            a {
+              color: var(--cm);
+            }
+            & > a {
+              position: relative;
+              padding-right: 1rem;
+
+              &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 0.5625rem;
+                height: 0.3438rem;
+                background-size: 0.5625rem 0.3438rem;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-image: var(--vectorLangD);
+                transition: all 0.15s ease-in;
+              }
+              sub {
+                font-size: 0.625rem;
+                vertical-align: 45%;
+              }
+            }
+          }
+          & > a {
+            padding: 0.75rem 0;
+          }
+          a {
+            display: block;
+            color: var(--cg);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            transition: all 0.15s ease-in;
+          }
+
+          .sub-menu {
+            display: none;
+            transition: all 0.15s ease-in;
+            padding-bottom: 1rem;
+            a {
+              padding-bottom: 0.65rem;
+            }
+            li {
+              &:last-child {
+                a {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__lang {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.625rem;
+
+        li {
+          a {
+            display: block;
+            padding: 0.3125rem 0.6563rem;
+            color: var(--cr);
+            border-radius: 0.5rem;
+            border: 0.125rem solid var(--ch);
+            background-color: var(--cw);
+          }
+          &.current-lang {
+            a {
+              border-color: transparent;
+              background-color: var(--cr);
+              color: var(--cw);
+            }
+          }
+        }
+      }
     }
   }
 }
