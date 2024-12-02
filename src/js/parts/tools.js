@@ -32,7 +32,7 @@ function updateMarginTopFirstSec() {
   if (headerMain && firstElemSec) {
     const headerHeight = headerMain.getBoundingClientRect().height;
     firstElemSec.forEach(el => {
-      el.style.marginTop = `${headerHeight}px`;
+      el.style.paddingTop = `${headerHeight}px`;
     });
   }
 }

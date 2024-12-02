@@ -3,11 +3,9 @@ import { toggle, up } from 'slide-element';
 function handleMenuItemChildren() {
   const mobMenu = document.querySelector('.mobmenu');
 
-  // Проверяем, нужно ли активировать мобильное меню
   const isMobile = () => window.innerWidth < 960;
 
   if (mobMenu) {
-    // Убедимся, что обработчик назначается или удаляется корректно
     if (isMobile()) {
       activateMobileMenu(mobMenu);
     } else {

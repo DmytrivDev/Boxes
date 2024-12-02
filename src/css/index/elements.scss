@@ -23,6 +23,14 @@
   line-height: 1.3;
 }
 
+.txt-def1 {
+  font-family: var(--GolosText);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
 .btn-def {
   display: block;
   width: fit-content;
@@ -42,7 +50,7 @@
   &:hover {
     border-color: var(--cr);
     color: var(--cr);
-    background-color: var(--cw);
+    background-color: transparent;
   }
 }
 
@@ -56,6 +64,10 @@
   .titel3,
   .titel4 {
     font-size: 0.75rem;
+  }
+
+  .txt-def1 {
+    font-size: 0.8125rem;
   }
 
   .btn-def {

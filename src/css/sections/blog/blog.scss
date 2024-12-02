@@ -1,0 +1,17 @@
+.blog {
+  &.fullscreen {
+    .title1 {
+      font-size: 3.4375rem;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .blog {
+    &.fullscreen {
+      .title1 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

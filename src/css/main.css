@@ -11,6 +11,7 @@
 
 /* General */
 @import url('./sections/general/modal.scss');
+@import url('./sections/general/fullscreen.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');
@@ -19,6 +20,48 @@
 
 /* Home */
 @import url('./sections/home/hero.scss');
+
+/* Production */
+/* @import url('./sections/production/production.scss'); */
+
+/* Portfolio */
+/* @import url('./sections/portfolio/portfolio.scss'); */
+
+/* Onecase */
+/* @import url('./sections/onecase/onecase.scss'); */
+
+/* Services */
+/* @import url('./sections/services/services.scss'); */
+
+/* Service */
+/* @import url('./sections/service/service.scss'); */
+
+/* Payment */
+/* @import url('./sections/payment/payment.scss'); */
+
+/* Blog */
+@import url('./sections/blog/blog.scss');
+
+/* Article */
+/* @import url('./sections/article/article.scss'); */
+
+/* Guarantees */
+/* @import url('./sections/guarantees/guarantees.scss'); */
+
+/* Delivery */
+/* @import url('./sections/delivery/delivery.scss'); */
+
+/* Contacts */
+/* @import url('./sections/contacts/contacts.scss'); */
+
+/* Policy */
+/* @import url('./sections/policy/policy.scss'); */
+
+/* Error */
+/* @import url('./sections/error/error.scss'); */
+
+/* Assortment */
+/* @import url('./sections/assortment/assortment.scss'); */
 
 /* Footer */
 @import url('./sections/footer/footer.scss');
