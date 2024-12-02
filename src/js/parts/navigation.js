@@ -1,13 +1,39 @@
 import { toggle, up } from 'slide-element';
 
 function handleMenuItemChildren() {
-  const screenWidth = window.innerWidth >= 960;
-
   const mobMenu = document.querySelector('.mobmenu');
 
-  if (!screenWidth) {
-    if (mobMenu) {
-      mobMenu.addEventListener('click', openNavItem);
+  // Проверяем, нужно ли активировать мобильное меню
+  const isMobile = () => window.innerWidth < 960;
+
+  if (mobMenu) {
+    // Убедимся, что обработчик назначается или удаляется корректно
+    if (isMobile()) {
+      activateMobileMenu(mobMenu);
+    } else {
+      deactivateMobileMenu(mobMenu);
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    if (isMobile()) {
+      activateMobileMenu(mobMenu);
+    } else {
+      deactivateMobileMenu(mobMenu);
+    }
+  });
+
+  function activateMobileMenu(menuElement) {
+    if (!menuElement.hasEventListener) {
+      menuElement.addEventListener('click', openNavItem);
+      menuElement.hasEventListener = true; // Флаг для предотвращения дублирования
+    }
+  }
+
+  function deactivateMobileMenu(menuElement) {
+    if (menuElement.hasEventListener) {
+      menuElement.removeEventListener('click', openNavItem);
+      menuElement.hasEventListener = false; // Сбрасываем флаг
     }
   }
 
@@ -16,21 +42,17 @@ function handleMenuItemChildren() {
     const currentTarget = event.currentTarget;
 
     const closeItemChildren = target.closest('.menu-item-has-children');
-    const containsItemChildren = closeItemChildren?.classList.contains(
-      'menu-item-has-children'
-    );
-
-    if (containsItemChildren) {
-      const allItemsOpened = currentTarget.querySelectorAll(
-        '.menu-item-has-children.isOpened'
-      );
-
+    if (closeItemChildren) {
       const subNav = closeItemChildren.querySelector('.sub-menu');
+
       toggle(subNav);
       closeItemChildren.classList.toggle('isOpened');
 
+      const allItemsOpened = currentTarget.querySelectorAll(
+        '.menu-item-has-children.isOpened'
+      );
       allItemsOpened.forEach(item => {
-        if (item !== target) {
+        if (item !== closeItemChildren) {
           const subNavOth = item.querySelector('.sub-menu');
           up(subNavOth);
           item.classList.remove('isOpened');
@@ -39,5 +61,6 @@ function handleMenuItemChildren() {
     }
   }
 }
-window.addEventListener('resize', handleMenuItemChildren);
+
+// Инициализация на событие DOMContentLoaded
 document.addEventListener('DOMContentLoaded', handleMenuItemChildren);
