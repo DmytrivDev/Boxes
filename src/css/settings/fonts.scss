@@ -10,6 +10,17 @@
 }
 
 @font-face {
+  font-family: "Manrope";
+  src:
+    url("../../fonts/Regular/Manrope-Regular.eot") format("eot"),
+    url("../../fonts/Regular/Manrope-Regular.woff2") format("woff2"),
+    url("../../fonts/Regular/Manrope-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "GolosText";
   src:
     url("../../fonts/Medium/GolosText-Medium.eot") format("eot"),

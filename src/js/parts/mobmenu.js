@@ -1,5 +1,9 @@
 import scrollLock from 'scroll-lock';
 
+import { getScrollBarWidth } from './modal.js';
+
+const header = document.querySelector('header');
+
 const headerMain = document.querySelector('.header__main');
 const burger = document.querySelector('.burger');
 const mobMenu = document.querySelector('.mobmenu');
@@ -32,6 +36,7 @@ function toggleMenu() {
     burger.classList.toggle('isOpened');
     mobMenu.classList.toggle('isOpened');
     headerMain.classList.toggle('addBorder');
+    header.style.paddingRight = `${getScrollBarWidth()}px`;
     toggleScrollLock();
   }
 }
@@ -41,6 +46,7 @@ function closeMenu() {
     burger.classList.remove('isOpened');
     mobMenu.classList.remove('isOpened');
     headerMain.classList.remove('addBorder');
+    header.style.paddingRight = '';
     if (mobMenuBody) scrollLock.enablePageScroll(mobMenuBody);
     isScrollLocked = false;
   }

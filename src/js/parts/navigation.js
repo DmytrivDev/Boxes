@@ -39,18 +39,22 @@ function handleMenuItemChildren() {
     const target = event.target;
     const currentTarget = event.currentTarget;
 
-    const closeItemChildren = target.closest('.menu-item-has-children');
-    if (closeItemChildren) {
-      const subNav = closeItemChildren.querySelector('.sub-menu');
+    const itemChildren = target.closest('.menu-item-has-children');
+    const itemChildrenLink = target.closest('.menu-item-has-children > a');
+
+    if (itemChildren && itemChildrenLink === target) {
+      event.preventDefault();
+
+      const subNav = itemChildren.querySelector('.sub-menu');
 
       toggle(subNav);
-      closeItemChildren.classList.toggle('isOpened');
+      itemChildren.classList.toggle('isOpened');
 
       const allItemsOpened = currentTarget.querySelectorAll(
         '.menu-item-has-children.isOpened'
       );
       allItemsOpened.forEach(item => {
-        if (item !== closeItemChildren) {
+        if (item !== itemChildren) {
           const subNavOth = item.querySelector('.sub-menu');
           up(subNavOth);
           item.classList.remove('isOpened');

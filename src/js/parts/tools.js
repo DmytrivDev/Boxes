@@ -4,7 +4,7 @@ const elemDesc = document.querySelectorAll('.el-desc');
 const elemMob = document.querySelectorAll('.el-mob');
 
 function visibilElemMobOrDesc() {
-  const screenWidth = window.innerWidth >= 960;
+  const screenWidth = window.innerWidth > 960;
 
   elemDesc?.forEach(el => {
     if (screenWidth) {
