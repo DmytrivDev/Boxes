@@ -55,6 +55,66 @@
   }
 }
 
+.label__def {
+  position: relative;
+  width: 100%;
+
+  &.isRequire {
+    input {
+      border-color: var(--cr);
+    }
+  }
+
+  .required {
+    position: absolute;
+    bottom: -0.25rem;
+    right: 0;
+    transform: translateY(100%);
+    font-family: var(--Manrope);
+    font-size: 0.75rem;
+    color: var(--cr);
+    text-align: right;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0.125rem;
+    background-color: var(--ch);
+    transform: translateY(100%);
+  }
+}
+.input__def {
+  display: block;
+  input {
+    width: 100%;
+    padding: 1.375rem 1.875rem 1.25rem 1.875rem;
+    border-radius: 0.625rem;
+    font-family: var(--Manrope);
+    background-color: var(--cu);
+    letter-spacing: -0.01em;
+    border: 0.0625rem solid transparent;
+    transition: all 0.15s ease-in;
+    &::placeholder {
+      color: var(--cg);
+    }
+  }
+}
+
 @media screen and (max-width: 960px) {
   .title1 {
     font-size: 1.75rem;
@@ -74,6 +134,24 @@
   .btn-def {
     padding: 1.125rem 0.875rem 0.875rem 0.875rem;
     font-size: 0.75rem;
+  }
+
+  .label__def {
+    .required {
+      bottom: -0.1rem;
+      font-size: 0.625rem;
+    }
+
+    &::after {
+      bottom: -0.9375rem;
+    }
+  }
+  .input__def {
+    input {
+      padding: 0.8125rem 0.625rem;
+      border-radius: 0.625rem;
+      font-size: 0.8125rem;
+    }
   }
 }
 

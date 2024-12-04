@@ -47,7 +47,7 @@
 
   &__body {
     flex: 0 0 auto;
-    margin: 4rem 0;
+    margin: 10rem 0 5rem 0;
     position: relative;
     background-color: var(--cw);
     border-radius: 0.5rem;
@@ -66,17 +66,17 @@
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    width: 1.875rem;
-    height: 1.875rem;
+    width: 1.75rem;
+    height: 1.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
     &::before {
       content: "";
       flex-shrink: 0;
-      width: 1.875rem;
-      height: 1.875rem;
-      background-size: 1.875rem 1.875rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      background-size: 1.75rem 1.75rem;
       background-position: center center;
       background-repeat: no-repeat;
       background-image: var(--closeModalB);
@@ -91,9 +91,78 @@
 
   &__wrapp {
   }
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.9375rem 0;
+    margin-bottom: 1.875rem;
+  }
+  &__logo {
+    width: 2.63906rem;
+    img {
+      width: 100%;
+    }
+  }
+  &__lead {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.04em;
+  }
+  &__inf {
+    margin-top: 1.25rem;
+    color: rgba(61, 53, 58, 0.7);
+    text-align: center;
+    font-family: var(--Manrope);
+    font-size: 0.875rem;
+    line-height: normal;
+    letter-spacing: -0.01em;
+    padding: 0 3.25rem;
+  }
 }
 
 @media screen and (max-width: 960px) {
   .modal {
+    &__container {
+      padding: 0 0.625rem;
+    }
+
+    &__body {
+      margin: 7rem 0 4rem 0;
+      max-width: 25rem;
+      padding: 1.25rem 0.875rem;
+    }
+
+    &__close {
+      top: 0.9375rem;
+      right: 0.9375rem;
+      width: 1.4375rem;
+      height: 1.4375rem;
+      &::before {
+        width: 1.4375rem;
+        height: 1.4375rem;
+        background-size: 1.4375rem 1.4375rem;
+      }
+    }
+
+    &__heading {
+      gap: 1.25rem 0;
+      margin-bottom: 0.9375rem;
+    }
+    &__logo {
+      width: 2.0625rem;
+    }
+
+    &__lead {
+      font-size: 1rem;
+    }
+    &__inf {
+      margin-top: 0.9375rem;
+      font-size: 0.75rem;
+      letter-spacing: -0.01em;
+      padding: 0;
+    }
   }
 }

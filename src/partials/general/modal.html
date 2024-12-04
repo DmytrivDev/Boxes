@@ -4,14 +4,51 @@
       <button type="button" class="modal__close closeModal"></button>
 
       <div class="modal__wrapp">
-        <h2>
-          Ми завжди на зв'язку, проконсультуємо та підберемо найкращі рішення
-          для вашого проєкту
-        </h2>
+        <div class="modal__heading">
+          <div class="modal__logo">
+            <img src="./img/icons/logo_2.svg" alt="" />
+          </div>
+          <h3 class="modal__lead">
+            Ми завжди на зв'язку, проконсультуємо та підберемо найкращі рішення
+            для вашого проєкту
+          </h3>
+        </div>
 
-        <form ></form>
+        <form class="form__consult submitForm" id="consultForm">
+          <div class="form__box">
+            <label class="label__def">
+              <span class="input__def">
+                <input
+                  type="text"
+                  name="consult-name"
+                  placeholder="Ваше ім’я*"
+                  data-required="true"
+                />
+              </span>
+              <span class="required"></span>
+            </label>
+            <label class="label__def">
+              <span class="input__def">
+                <input
+                  type="tel"
+                  name="consult-tel"
+                  placeholder="Ваш телефон*"
+                  data-required="true"
+                />
+              </span>
+              <span class="required"></span>
+            </label>
+          </div>
 
-        <button type="submit" class="btn-def">Розрахувати в телеграмі</button>
+          <button type="submit" class="btn-def">Розрахувати в телеграмі</button>
+        </form>
+
+        <div class="modal__inf">
+          <p>
+            Надіславши цей запит, Ви надаєте згоду на збір, обробку та
+            зберігання Ваших персональних даних
+          </p>
+        </div>
       </div>
     </div>
   </div>
