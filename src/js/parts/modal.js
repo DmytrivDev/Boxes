@@ -58,7 +58,9 @@ export function openModal(modalId) {
       initCloseModal(modal);
       modal.dataset.listenerAdded = 'true';
     }
-    showModal(modal);
+    if (!modal.classList.contains('isOpened')) {
+      showModal(modal);
+    }
   }
 }
 
