@@ -161,13 +161,14 @@
     flex-wrap: wrap;
     gap: 0.625rem;
     a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 50%;
       overflow: hidden;
+      img {
+        width: 100%;
+      }
       &:hover {
         img {
           filter: brightness(0) saturate(100%) invert(50%) sepia(35%)

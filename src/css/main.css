@@ -13,6 +13,7 @@
 @import url('./sections/general/modal.scss');
 @import url('./sections/general/fullscreen.scss');
 @import url('./sections/general/descript.scss');
+@import url('./sections/general/ourcont.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');
