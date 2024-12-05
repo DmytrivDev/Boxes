@@ -15,7 +15,7 @@
   &__cards {
     display: flex;
     align-items: start;
-    gap: 1.5rem;
+    gap: 0 1.5rem;
     margin-bottom: -9.9375rem;
 
     .cards-cont {
@@ -82,7 +82,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
-  gap: 1.75rem;
+  gap: 0 1.75rem;
   margin-bottom: 3.125rem;
 }
 .heading__desc {
@@ -145,14 +145,14 @@
   &__box {
     margin-top: 2rem;
     display: flex;
-    align-items: start;
-    gap: 1.25rem;
+    align-items: center;
+    gap: 0 1.25rem;
     font-family: var(--GolosText);
     line-height: 1.4;
     letter-spacing: -0.02em;
     ul {
       display: flex;
-      gap: 0.62rem;
+      gap: 0.625rem;
       a {
         display: block;
         width: 3.125rem;
@@ -172,12 +172,136 @@
     }
   }
 }
-.btn-def {
-}
-.openModal {
-}
 
 @media screen and (max-width: 960px) {
   .ourcont {
+    padding: 0;
+
+    &__cards {
+      gap: 0 0.25rem;
+      margin-bottom: -4.0625rem;
+
+      .cards-cont {
+        &:first-child {
+          margin-top: 4rem;
+        }
+        &:nth-child(2) {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    &__bottom {
+      border-radius: 0;
+
+      .title2 {
+        font-size: 1.125rem;
+        max-width: 32rem;
+        margin-bottom: 0.9375rem;
+      }
+      .btn-def {
+        width: 100%;
+        max-width: 22.5rem;
+      }
+    }
+
+    &__wrapp {
+      padding: 6.5625rem 0 2.5rem 0;
+    }
+    &__desc {
+      font-size: 0.75rem;
+    }
+    &__vector {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      max-width: 209.6875rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .heading__sec {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 0.625rem 0;
+    margin-bottom: 0.9375rem;
+  }
+  .heading__desc {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 0.625rem 0;
+    .txt-def1 {
+      gap: 0.625rem 0;
+    }
+  }
+
+  .cards-cont {
+    flex-basis: calc((100% - 2 * 0.25rem) / 3);
+    padding: 0.9375rem 5rem 0.9375rem 0.625rem;
+    min-height: 12rem;
+
+    &__icon {
+      top: 0.9375rem;
+      right: 1.25rem;
+      width: 2.5rem;
+    }
+
+    &__name {
+      font-size: 0.75rem;
+      margin-bottom: 0.625rem;
+    }
+    &__link {
+      font-size: 0.75rem;
+      margin-bottom: auto;
+    }
+    &__box {
+      margin-top: 1rem;
+      gap: 0.625rem;
+      font-size: 0.75rem;
+      flex-direction: column;
+      align-items: start;
+
+      ul {
+        gap: 0.625rem;
+        a {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .ourcont {
+    &__cards {
+      align-items: stretch;
+      flex-direction: column;
+      gap: 0.25rem 0;
+
+      .cards-cont {
+        &:first-child {
+          margin-top: 0;
+        }
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .cards-cont {
+    flex-basis: calc(100%);
+    min-height: 100%;
+
+    &__box {
+      align-items: center;
+      flex-direction: row;
+    }
   }
 }
