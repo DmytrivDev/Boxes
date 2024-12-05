@@ -12,6 +12,9 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: -0.04em;
+  &.tl-cw {
+    color: var(--cw);
+  }
 }
 .title1 {
   font-size: 5.3125rem;
