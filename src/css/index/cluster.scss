@@ -1,3 +1,22 @@
+.heading__sec {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 0 1.75rem;
+  margin-bottom: 3.125rem;
+}
+.heading__desc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 0 1.875rem;
+  .txt-def1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem 0;
+  }
+}
+
 .form {
   &__consult {
     display: flex;
@@ -15,6 +34,21 @@
 }
 
 @media screen and (max-width: 960px) {
+  .heading__sec {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 0.625rem 0;
+    margin-bottom: 0.9375rem;
+  }
+  .heading__desc {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 0.625rem 0;
+    .txt-def1 {
+      gap: 0.625rem 0;
+    }
+  }
+
   .form {
     &__consult {
       .btn-def {
