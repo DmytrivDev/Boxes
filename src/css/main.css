@@ -16,6 +16,7 @@
 @import url('./sections/general/ourcont.scss');
 @import url('./sections/general/faq.scss');
 @import url('./sections/general/additional.scss');
+@import url('./sections/general/advantage.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');
