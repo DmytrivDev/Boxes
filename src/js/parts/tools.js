@@ -35,11 +35,11 @@ function updateMainPaddingTop() {
   }
 }
 
-// Init tools =========================
+// Update min-height first sec =========================
 
 const fullscreenSec = document.querySelectorAll('.fullscreen');
 
-function updateMinHeightnFirstSec() {
+function updateMinHeightFirstSec() {
   if (headerMain && fullscreenSec) {
     const screenWidth = window.innerWidth > 960;
 
@@ -62,7 +62,7 @@ function updateMinHeightnFirstSec() {
 function toolsInit() {
   updateMainPaddingTop();
   visibilElemMobOrDesc();
-  updateMinHeightnFirstSec();
+  updateMinHeightFirstSec();
 }
 
 window.addEventListener('resize', toolsInit);
