@@ -63,6 +63,30 @@
     background-color: transparent;
   }
 }
+.btn-alt {
+  text-wrap: nowrap;
+  display: block;
+  width: fit-content;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 1.25rem 2.375rem 1rem 2.375rem;
+  font-weight: 500;
+  color: var(--cr);
+  font-size: 0.9375rem;
+  line-height: 1.2;
+  letter-spacing: -0.0375rem;
+  letter-spacing: -0.04em;
+  background-color: var(--cw);
+  text-transform: uppercase;
+  border: 0.125rem solid transparent;
+  transition: all 0.15s ease-in;
+
+  &:hover {
+    border-color: var(--cw);
+    color: var(--cw);
+    background-color: transparent;
+  }
+}
 .btn-more {
   font-size: 0.9375rem;
   font-weight: 500;
@@ -159,6 +183,10 @@
 
   .btn-def {
     padding: 1.125rem 0.875rem 0.875rem 0.875rem;
+    font-size: 0.75rem;
+  }
+  .btn-alt {
+    padding: 0.9375rem 0.875rem 0.6563rem 0.875rem;
     font-size: 0.75rem;
   }
   .btn-more {

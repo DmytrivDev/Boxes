@@ -1,7 +1,87 @@
 .advantage {
+  padding: 0 1.5rem;
+
+  &__wrapp {
+    padding: 19.38rem 0 0 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: -15.75rem;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(174, 155, 165, 0.2);
+      border-radius: 0.5rem;
+    }
+  }
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__cards {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: -4rem;
+
+    .card-def {
+      &:nth-child(1) {
+        margin-top: 12.5rem;
+      }
+      &:nth-child(2) {
+        margin-top: 6.25rem;
+      }
+      &:nth-child(5) {
+        margin-top: -6.25rem;
+      }
+      &:nth-child(6) {
+        margin-top: -12.5rem;
+      }
+    }
+  }
+
+  .heading__sec {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 960px) {
   .advantage {
+    padding: 0;
+
+    &__wrapp {
+      padding: 12.25rem 0 0 0;
+      border-radius: 0;
+      &::before {
+        top: -1.875rem;
+        border-radius: 0;
+      }
+    }
+
+    &__cards {
+      gap: 0.25rem;
+      margin-top: 0;
+
+      .card-def {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(5),
+        &:nth-child(6) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .heading__sec {
+      margin-bottom: 0.9375rem;
+    }
   }
 }
