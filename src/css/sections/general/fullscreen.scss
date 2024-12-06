@@ -58,6 +58,14 @@
   flex-direction: column;
   min-height: 100vh;
 
+  &.halvscr {
+    min-height: 41.25rem;
+
+    .fullscreen__body {
+      gap: 6.875rem;
+    }
+  }
+
   &__wrapp {
     position: relative;
     overflow: hidden;
@@ -147,14 +155,6 @@
         rgba(102, 102, 102, 0) 100%
       );
     }
-  }
-}
-
-.halvscr {
-  min-height: 41.25rem;
-
-  .fullscreen__body {
-    gap: 6.875rem;
   }
 }
 

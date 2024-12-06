@@ -1,3 +1,11 @@
+.assortment-advan {
+  .advantage {
+    &__wrapp {
+      padding-top: 8.125rem;
+    }
+  }
+}
+
 .advantage {
   padding: 0 1.5rem;
 
@@ -54,6 +62,14 @@
 }
 
 @media screen and (max-width: 960px) {
+  .assortment-advan {
+    .advantage {
+      &__wrapp {
+        padding-top: 2.5rem;
+      }
+    }
+  }
+
   .advantage {
     padding: 0;
 

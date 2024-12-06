@@ -4,6 +4,14 @@
 .mr1 {
   margin-top: 8.125rem;
 }
+.sec-br {
+  margin-top: 8.125rem;
+  padding: 0 1.5rem;
+  &__wrapp {
+    padding-top: 8.125rem;
+    border-top: 0.125rem solid var(--ch);
+  }
+}
 
 .title1,
 .title2,
@@ -38,6 +46,9 @@
   font-size: 1.0625rem;
   font-weight: 500;
   letter-spacing: -0.02em;
+  span {
+    color: var(--cr);
+  }
 }
 
 .btn-def {
@@ -71,15 +82,33 @@
   border-radius: 0.5rem;
   padding: 1.25rem 2.375rem 1rem 2.375rem;
   font-weight: 500;
-  color: var(--cr);
   font-size: 0.9375rem;
   line-height: 1.2;
   letter-spacing: -0.0375rem;
   letter-spacing: -0.04em;
+  color: var(--cr);
   background-color: var(--cw);
-  text-transform: uppercase;
   border: 0.125rem solid transparent;
+  text-transform: uppercase;
   transition: all 0.15s ease-in;
+
+  &.var2 {
+    min-width: 16.25rem;
+    border-color: var(--cf);
+    background-color: transparent;
+    &:hover {
+      color: var(--cr);
+      border-color: var(--cr);
+    }
+  }
+  &.var3 {
+    border-color: var(--cf);
+    background-color: transparent;
+    &:hover {
+      color: var(--cr);
+      border-color: var(--cr);
+    }
+  }
 
   &:hover {
     border-color: var(--cw);
@@ -165,6 +194,13 @@
   .mr1 {
     margin-top: 2.5rem;
   }
+  .sec-br {
+    margin-top: 2.5rem;
+    padding: 0;
+    &__wrapp {
+      padding-top: 2.5rem;
+    }
+  }
 
   .title1 {
     font-size: 1.75rem;
@@ -188,6 +224,13 @@
   .btn-alt {
     padding: 0.9375rem 0.875rem 0.6563rem 0.875rem;
     font-size: 0.75rem;
+    &.var2 {
+      min-width: auto;
+    }
+    &.var3 {
+      padding: 0.9375rem 0.875rem 0.75rem 0.875rem;
+      font-size: 0.625rem;
+    }
   }
   .btn-more {
     font-size: 0.75rem;

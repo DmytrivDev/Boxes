@@ -1,11 +1,11 @@
+import './parts/tools.js';
 import './parts/modal.js';
 import './parts/mobmenu.js';
-import './parts/tools.js';
 import './parts/navigation.js';
 import './parts/forms.js';
 import './parts/descript.js';
 import './parts/accordion.js';
+import './parts/splidecust.js';
+import './parts/splide.js';
 // import './parts/scrollanim.js';
 // import './parts/banner.js';
-// import './parts/splidecust.js';
-// import './parts/splide.js';

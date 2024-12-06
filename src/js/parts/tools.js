@@ -23,16 +23,36 @@ function visibilElemMobOrDesc() {
   });
 }
 
-// Update margin top first sec =========================
+// Update main padding top =========================
 
 const headerMain = document.querySelector('.header__main');
-const firstElemSec = document.querySelectorAll('.first-elem');
+const main = document.querySelector('main');
 
-function updateMarginTopFirstSec() {
-  if (headerMain && firstElemSec) {
+function updateMainPaddingTop() {
+  if (headerMain && main) {
     const headerHeight = headerMain.getBoundingClientRect().height;
-    firstElemSec.forEach(el => {
-      el.style.paddingTop = `${headerHeight}px`;
+    main.style.paddingTop = `${headerHeight}px`;
+  }
+}
+
+// Init tools =========================
+
+const fullscreenSec = document.querySelectorAll('.fullscreen');
+
+function updateMinHeightnFirstSec() {
+  if (headerMain && fullscreenSec) {
+    const screenWidth = window.innerWidth > 960;
+
+    fullscreenSec.forEach(section => {
+      const headerHeight = headerMain.getBoundingClientRect().height;
+
+      if (!section.classList.contains('halvscr')) {
+        if (screenWidth) {
+          section.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+        } else {
+          section.style.minHeight = '';
+        }
+      }
     });
   }
 }
@@ -40,8 +60,9 @@ function updateMarginTopFirstSec() {
 // Init tools =========================
 
 function toolsInit() {
-  updateMarginTopFirstSec();
+  updateMainPaddingTop();
   visibilElemMobOrDesc();
+  updateMinHeightnFirstSec();
 }
 
 window.addEventListener('resize', toolsInit);

@@ -9,11 +9,14 @@ export const initSlider = (container, options = {}) => {
     type: 'slide',
     speed: 1000,
     pagination: false,
+    arrows: false,
     updateOnMove: true,
+    perMove: 1,
 
     ...options,
   }).mount();
 
+  const progressbar = container.querySelector('.progressbar__thumb');
   const arrows = {
     next: container.querySelector('.arrows__next'),
     prev: container.querySelector('.arrows__prev'),
@@ -38,6 +41,15 @@ export const initSlider = (container, options = {}) => {
 
     if (arrows.number) {
       arrows.number.textContent = `${currentIndex}/${totalSlides}`;
+    }
+
+    if (progressbar) {
+      const totalSlides = splide.Components.Elements.slides.length + 1;
+      const progress =
+        (((splide.index + 1) % totalSlides) /
+          (totalSlides - splide.options.perPage)) *
+        100;
+      progressbar.style.width = `${progress}%`;
     }
   };
 

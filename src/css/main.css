@@ -17,6 +17,7 @@
 @import url('./sections/general/faq.scss');
 @import url('./sections/general/additional.scss');
 @import url('./sections/general/advantage.scss');
+@import url('./sections/general/slider.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');

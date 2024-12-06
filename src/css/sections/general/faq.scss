@@ -83,6 +83,10 @@
       transition-property: height, visibility, opacity !important;
     }
   }
+
+  .btn-alt {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -121,9 +125,33 @@
     &__wrapp {
       grid-template-columns: 1fr;
       gap: 0.25rem 0;
+      .faq__list {
+        &:last-child {
+          display: none;
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
     }
     &__list {
+      transition: all 0.15s ease-in;
       gap: 0.25rem 0;
+
+      &.isOpened {
+        display: flex !important;
+      }
+      &.isAnim {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    }
+
+    .btn-alt {
+      display: block;
+      margin: 0 auto;
+      margin-top: 1.75rem;
+      width: 100%;
+      max-width: 22.5rem;
     }
   }
 }
