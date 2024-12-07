@@ -17,6 +17,23 @@ sliderDef?.forEach(container => {
   });
 });
 
+const brands = document.querySelector('.brands');
+if (brands) {
+  initSlider(brands, {
+    perPage: 6,
+    gap: '1.5rem',
+    breakpoints: {
+      960: {
+        perPage: 5,
+        gap: '1.25rem',
+      },
+      775: {
+        perPage: 4,
+      },
+    },
+  });
+}
+
 let ourproductSliderInstance;
 const ourproduct = document.querySelector('.ourproduct');
 

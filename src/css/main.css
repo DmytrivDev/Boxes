@@ -27,6 +27,7 @@
 /* Home */
 @import url('./sections/home/hero.scss');
 @import url('./sections/home/ourproduct.scss');
+@import url('./sections/home/brands.scss');
 
 /* Production */
 @import url('./sections/production/stages.scss');

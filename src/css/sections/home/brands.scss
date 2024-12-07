@@ -1,0 +1,35 @@
+.brands {
+  &__img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90%;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  .splide__track {
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .brands {
+    .heading__sec {
+      margin-bottom: 1.875rem;
+    }
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .brands {
+    .heading__sec {
+      margin-bottom: 1.25rem;
+    }
+  }
+}
