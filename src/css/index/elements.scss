@@ -8,8 +8,18 @@
   margin-top: 8.125rem;
   padding: 0 1.5rem;
   &__wrapp {
+    position: relative;
     padding-top: 8.125rem;
-    border-top: 0.125rem solid var(--ch);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 0.125rem;
+      background-color: var(--ch);
+    }
   }
 }
 
@@ -199,6 +209,9 @@
     padding: 0;
     &__wrapp {
       padding-top: 2.5rem;
+      &::after {
+        width: calc(100% - 2em);
+      }
     }
   }
 

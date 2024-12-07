@@ -1,10 +1,7 @@
 .ourcont {
-  padding: 0 1.5rem;
-
   &__top {
     position: relative;
     z-index: 2;
-    border-top: 0.125rem solid var(--ch);
     .ourcont__container {
     }
     .heading__sec {
@@ -159,15 +156,6 @@
 
 @media screen and (max-width: 960px) {
   .ourcont {
-    padding: 0;
-
-    &__top {
-      border: none;
-    }
-    &__box {
-      border-top: 0.125rem solid var(--ch);
-    }
-
     &__cards {
       gap: 0 0.25rem;
       margin-bottom: -4.0625rem;
