@@ -1,4 +1,4 @@
-.ourproduct {
+.stages {
   .heading__sec {
     margin-bottom: 0;
   }
@@ -10,7 +10,10 @@
 
     .title4 {
       margin-bottom: 0;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
+    }
+    &__desc {
+      -webkit-line-clamp: 5;
     }
   }
 
@@ -19,23 +22,26 @@
   }
   .splide__list {
     display: flex !important;
-    flex-wrap: wrap;
     align-items: start;
+    flex-wrap: wrap;
     gap: 1.5rem;
 
     .splide__slide {
       display: flex;
       flex-direction: column;
       min-height: 23.75rem;
-      flex-basis: calc((100% - 3 * 1.5rem) / 4);
+      flex-basis: calc((100% - 2 * 1.5rem) / 3);
       &:nth-child(1) {
-        margin-top: 15rem;
-      }
-      &:nth-child(2) {
         margin-top: 10rem;
       }
-      &:nth-child(3) {
+      &:nth-child(2) {
         margin-top: 5rem;
+      }
+      &:nth-child(5) {
+        margin-top: -5rem;
+      }
+      &:nth-child(6) {
+        margin-top: -10rem;
       }
     }
   }
@@ -46,7 +52,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  .ourproduct {
+  .stages {
     .heading__sec {
       margin-bottom: 0.9375rem;
     }
@@ -63,11 +69,12 @@
       gap: 0.25rem;
 
       .splide__slide {
-        min-height: 8.125rem;
+        min-height: 9.25rem;
         flex-basis: calc((100% - 1 * 0.25rem) / 2);
         &:nth-child(1),
         &:nth-child(2),
-        &:nth-child(3) {
+        &:nth-child(5),
+        &:nth-child(6) {
           margin-top: 0;
         }
       }
@@ -76,22 +83,9 @@
 }
 
 @media screen and (max-width: 775px) {
-  .ourproduct {
+  .stages {
     .card-def {
-      padding: 1.25rem 0.625rem 4.0625rem 0.625rem;
-
-      .title4 {
-        -webkit-line-clamp: 3;
-      }
-      &__desc {
-        display: none;
-      }
-      &__img {
-        top: auto;
-        right: auto;
-        bottom: 0.9375rem;
-        left: 0.625rem;
-      }
+      padding: 0.9375rem 4.5rem 0.625rem 0.625rem;
     }
 
     .splide__track {
@@ -102,7 +96,6 @@
       gap: 0;
 
       .splide__slide {
-        min-height: 7.5rem;
         flex-basis: auto;
       }
     }

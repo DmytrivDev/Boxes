@@ -29,7 +29,8 @@
 @import url('./sections/home/ourproduct.scss');
 
 /* Production */
-/* @import url('./sections/production/production.scss'); */
+@import url('./sections/production/stages.scss');
+@import url('./sections/production/control.scss');
 
 /* Portfolio */
 /* @import url('./sections/portfolio/portfolio.scss'); */
@@ -41,7 +42,7 @@
 /* @import url('./sections/services/services.scss'); */
 
 /* Service */
-/* @import url('./sections/service/service.scss'); */
+@import url('./sections/service/favor.scss');
 
 /* Payment */
 @import url('./sections/payment/terms.scss');
@@ -53,7 +54,7 @@
 /* @import url('./sections/article/article.scss'); */
 
 /* Guarantees */
-/* @import url('./sections/guarantees/guarantees.scss'); */
+@import url('./sections/guarantees/cases.scss');
 
 /* Delivery */
 /* @import url('./sections/delivery/delivery.scss'); */
@@ -68,7 +69,7 @@
 /* @import url('./sections/error/error.scss'); */
 
 /* Assortment */
-/* @import url('./sections/assortment/assortment.scss'); */
+@import url('./sections/assortment/featur.scss');
 
 /* Footer */
 @import url('./sections/footer/footer.scss');

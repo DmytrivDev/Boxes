@@ -78,6 +78,9 @@
     font-family: var(--GolosText);
     line-height: normal;
     letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .title4 {
     margin-bottom: auto;
@@ -89,6 +92,11 @@
   }
   &__desc {
     font-family: var(--GolosText);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
   }
   &__img {
     position: absolute;

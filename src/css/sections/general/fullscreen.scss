@@ -179,6 +179,14 @@
     padding: 0;
     min-height: 100%;
 
+    &.halvscr {
+      min-height: 20rem;
+
+      .fullscreen__body {
+        gap: 6rem;
+      }
+    }
+
     &__wrapp {
       border-radius: 0;
     }
@@ -199,14 +207,6 @@
           max-width: 17rem;
         }
       }
-    }
-  }
-
-  .halvscr {
-    min-height: 20rem;
-
-    .fullscreen__body {
-      gap: 6rem;
     }
   }
 }

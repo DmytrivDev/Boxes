@@ -29,15 +29,83 @@ const initOurproductSlider = () => {
   }
 };
 
+let featurSliderInstance;
+const featur = document.querySelector('.featur');
+
+const initFeaturSlider = () => {
+  if (featur && !featurSliderInstance) {
+    featurSliderInstance = initSlider(featur, {
+      perPage: 1,
+      gap: '0.25rem',
+    });
+  }
+};
+
+let favorSliderInstance;
+const favor = document.querySelector('.favor');
+
+const initFavorSlider = () => {
+  if (favor && !favorSliderInstance) {
+    favorSliderInstance = initSlider(favor, {
+      perPage: 1,
+      gap: '0.25rem',
+    });
+  }
+};
+
+let controlSliderInstance;
+const control = document.querySelector('.control');
+
+const initСontrolSlider = () => {
+  if (control && !controlSliderInstance) {
+    controlSliderInstance = initSlider(control, {
+      perPage: 1,
+      gap: '0.25rem',
+    });
+  }
+};
+
+let stagesSliderInstance;
+const stages = document.querySelector('.stages');
+
+const initStagesSlider = () => {
+  if (stages && !stagesSliderInstance) {
+    stagesSliderInstance = initSlider(stages, {
+      perPage: 1,
+      gap: '0.25rem',
+    });
+  }
+};
+
 const destroySliders = () => {
   if (ourproductSliderInstance) {
     ourproductSliderInstance.destroy();
     ourproductSliderInstance = null;
   }
+  if (featurSliderInstance) {
+    featurSliderInstance.destroy();
+    featurSliderInstance = null;
+  }
+  if (favorSliderInstance) {
+    favorSliderInstance.destroy();
+    favorSliderInstance = null;
+  }
+  if (controlSliderInstance) {
+    controlSliderInstance.destroy();
+    controlSliderInstance = null;
+  }
+  if (stagesSliderInstance) {
+    stagesSliderInstance.destroy();
+    stagesSliderInstance = null;
+  }
 };
 
 const checkViewport = () => {
   initOurproductSlider();
+  initFeaturSlider();
+  initFavorSlider();
+  initСontrolSlider();
+  initStagesSlider();
   if (window.innerWidth > 775) {
     destroySliders();
   }

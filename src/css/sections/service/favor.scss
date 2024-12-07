@@ -1,4 +1,4 @@
-.ourproduct {
+.favor {
   .heading__sec {
     margin-bottom: 0;
   }
@@ -46,13 +46,19 @@
 }
 
 @media screen and (max-width: 960px) {
-  .ourproduct {
+  .favor {
     .heading__sec {
       margin-bottom: 0.9375rem;
     }
 
     .card-def {
       padding: 1.25rem 4.5rem 0.625rem 0.625rem;
+      &__img {
+        left: auto;
+        bottom: auto;
+        top: 0.94rem;
+        right: 1.25rem;
+      }
     }
 
     .splide {
@@ -76,24 +82,7 @@
 }
 
 @media screen and (max-width: 775px) {
-  .ourproduct {
-    .card-def {
-      padding: 1.25rem 0.625rem 4.0625rem 0.625rem;
-
-      .title4 {
-        -webkit-line-clamp: 3;
-      }
-      &__desc {
-        display: none;
-      }
-      &__img {
-        top: auto;
-        right: auto;
-        bottom: 0.9375rem;
-        left: 0.625rem;
-      }
-    }
-
+  .favor {
     .splide__track {
       overflow: visible;
     }
