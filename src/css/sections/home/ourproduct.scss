@@ -1,0 +1,130 @@
+.ourproduct {
+  &__container {
+  }
+
+  &__list {
+  }
+
+  .card-def {
+    min-height: auto;
+    flex-basis: 100%;
+    flex: 1 1 auto;
+
+    .title4 {
+      margin-bottom: 0;
+      -webkit-line-clamp: 2;
+    }
+    &__desc {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 7;
+    }
+  }
+
+  .heading__sec {
+    margin-bottom: 0;
+  }
+
+  .splide {
+    margin-top: -4rem;
+  }
+  .splide__list {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1.5rem;
+
+    .splide__slide {
+      display: flex;
+      flex-direction: column;
+      min-height: 23.75rem;
+      flex-basis: calc((100% - 3 * 1.5rem) / 4);
+      &:nth-child(1) {
+        margin-top: 15rem;
+      }
+      &:nth-child(2) {
+        margin-top: 10rem;
+      }
+      &:nth-child(3) {
+        margin-top: 5rem;
+      }
+    }
+  }
+
+  .slider-def__wrapp {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .ourproduct {
+    .card-def {
+      padding: 1.25rem 5rem 0.625rem 0.625rem;
+      &__img {
+        top: 1.25rem;
+      }
+    }
+
+    .heading__sec {
+      margin-bottom: 0.9375rem;
+    }
+
+    .splide {
+      margin-top: 0;
+    }
+    .splide__list {
+      align-items: stretch;
+      gap: 0.25rem;
+
+      .splide__slide {
+        min-height: 8.125rem;
+        flex-basis: calc((100% - 1 * 0.25rem) / 2);
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .ourproduct {
+    .card-def {
+      padding: 1.25rem 0.625rem 4.0625rem 0.625rem;
+
+      .title4 {
+        -webkit-line-clamp: 3;
+      }
+      &__desc {
+        display: none;
+      }
+      &__img {
+        top: auto;
+        right: auto;
+        bottom: 0.9375rem;
+        left: 0.625rem;
+      }
+    }
+
+    .slider-def__wrapp {
+      display: flex;
+    }
+
+    .splide__list {
+      flex-wrap: nowrap;
+    }
+
+    .splide__slide {
+      min-height: auto;
+      flex: basis 100%;
+    }
+
+    .slider-def__wrapp {
+      display: flex;
+    }
+  }
+}

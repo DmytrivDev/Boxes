@@ -65,6 +65,8 @@ export const initSlider = (container, options = {}) => {
   window.addEventListener('resize', updateSlideState);
 
   updateSlideState();
+
+  return splide;
 };
 
 // <section class="elem">
