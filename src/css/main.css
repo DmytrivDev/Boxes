@@ -18,6 +18,8 @@
 @import url('./sections/general/additional.scss');
 @import url('./sections/general/advantage.scss');
 @import url('./sections/general/slider.scss');
+@import url('./sections/general/box.scss');
+@import url('./sections/general/specific.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');

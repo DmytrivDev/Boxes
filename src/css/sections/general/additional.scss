@@ -7,6 +7,10 @@
       display: none;
     }
   }
+
+  .card-addit {
+    min-height: 30rem;
+  }
 }
 
 .additional {
@@ -83,6 +87,12 @@
 }
 
 @media screen and (max-width: 960px) {
+  .servicesPage {
+    .card-addit {
+      min-height: 11.25rem;
+    }
+  }
+
   .additional {
     &__cards {
       flex-wrap: wrap;
