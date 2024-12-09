@@ -11,6 +11,7 @@
 
 /* General */
 @import url('./sections/general/modal.scss');
+@import url('./sections/general/banner.scss');
 @import url('./sections/general/fullscreen.scss');
 @import url('./sections/general/descript.scss');
 @import url('./sections/general/ourcont.scss');
@@ -20,6 +21,7 @@
 @import url('./sections/general/slider.scss');
 @import url('./sections/general/box.scss');
 @import url('./sections/general/specific.scss');
+@import url('./sections/general/reviews.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');
@@ -46,6 +48,7 @@
 
 /* Service */
 @import url('./sections/service/favor.scss');
+@import url('./sections/service/explanat.scss');
 
 /* Payment */
 @import url('./sections/payment/terms.scss');
@@ -63,16 +66,17 @@
 /* @import url('./sections/delivery/delivery.scss'); */
 
 /* Contacts */
-/* @import url('./sections/contacts/contacts.scss'); */
+@import url('./sections/contacts/location.scss');
 
 /* Policy */
 /* @import url('./sections/policy/policy.scss'); */
 
 /* Error */
-/* @import url('./sections/error/error.scss'); */
+@import url('./sections/error/error.scss');
 
 /* Assortment */
 @import url('./sections/assortment/featur.scss');
+@import url('./sections/assortment/calc.scss');
 
 /* Footer */
 @import url('./sections/footer/footer.scss');

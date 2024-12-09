@@ -1,0 +1,39 @@
+.calc {
+  &__body {
+    overflow: hidden;
+    border-radius: 0.625rem;
+    border: 0.125rem solid var(--ch);
+    min-height: 36.25rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    font-family: var(--GolosText);
+    flex-basis: calc((100% - 1 * 1.5rem) / 2);
+    div {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.3;
+      opacity: 0.3;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .calc {
+    .sec-column {
+      flex-direction: column;
+    }
+    &__body {
+      flex-basis: auto;
+      min-height: 11.1875rem;
+      padding: 0.9375rem;
+      div {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

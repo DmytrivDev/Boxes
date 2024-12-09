@@ -1,0 +1,36 @@
+.error {
+  &__container {
+  }
+  &__body {
+    padding-top: 8.125rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .breadcrumbs {
+    ul {
+      li {
+        color: rgba(61, 53, 58, 0.67);
+        &:last-child {
+          span,
+          a {
+            color: var(--cm);
+          }
+        }
+        a {
+          &:hover {
+            color: var(--cm);
+          }
+        }
+      }
+    }
+  }
+  .btn-alt {
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .error {
+  }
+}

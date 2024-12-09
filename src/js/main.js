@@ -7,5 +7,6 @@ import './parts/descript.js';
 import './parts/accordion.js';
 import './parts/splidecust.js';
 import './parts/splide.js';
+import './parts/banner.js';
+import './parts/map.js';
 // import './parts/scrollanim.js';
-// import './parts/banner.js';

@@ -1,0 +1,32 @@
+.explanat {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 8.125rem 0;
+    .sec-column {
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .explanat {
+    &__container {
+      gap: 2.5rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .explanat {
+    &__container {
+      .sec-column {
+        &:nth-child(2n) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
