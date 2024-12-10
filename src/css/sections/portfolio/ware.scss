@@ -1,0 +1,225 @@
+.ware {
+  padding-top: 4.9375rem;
+
+  &__container {
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+.cards-ware {
+  flex-basis: calc((100% - 3 * 1.5rem) / 4);
+  background-color: var(--cu);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  &:hover {
+    .title3 {
+      color: var(--cr);
+    }
+    .btn-alt {
+      opacity: 1;
+      visibility: visible;
+    }
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.facetwp-facet-catnews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3.125rem;
+
+  .facetwp-radio {
+    cursor: pointer;
+    white-space: nowrap;
+    text-wrap: nowrap;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--cr);
+    border-radius: 0.5rem;
+    border: 0.125rem solid var(--ch);
+    background-color: var(--cw);
+    padding: 1.125rem 1.5625rem 0.875rem 1.5625rem;
+    transition: all 0.15s ease-in;
+    &:hover {
+      border-color: var(--cr);
+    }
+    &.checked {
+      border-color: var(--cr);
+      background-color: var(--cr);
+      color: var(--cw);
+    }
+    .facetwp-display-value {
+      display: block;
+    }
+    .facetwp-counter {
+      display: none;
+    }
+  }
+}
+
+.pagination__wrapp {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  .facetwp-facet-pagination {
+    width: 100%;
+    max-width: 29.75rem;
+  }
+  .facetwp-pager {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0 1.875rem;
+    width: 100%;
+  }
+  .facetwp-page {
+    cursor: pointer;
+    font-family: var(--GolosText);
+    font-size: 1.0625rem;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    transition: all 0.15s ease-in;
+    &:hover {
+      color: var(--cr);
+    }
+    &.active {
+      color: var(--cr);
+    }
+    &.dots {
+      cursor: default;
+      &:hover {
+        color: var(--cm);
+      }
+    }
+    &.prev,
+    &.next {
+      background-color: transparent;
+      overflow: hidden;
+      border-radius: 50%;
+      width: 3.75rem;
+      height: 3.75rem;
+      border: 0.125rem solid var(--cf);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before {
+        content: "";
+        width: 1.125rem;
+        height: 1.125rem;
+        background-size: 1.125rem 1.125rem;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: all 0.15s ease-in;
+        background-image: var(--sliderArrowRD);
+      }
+      &:hover {
+        border-color: var(--cr);
+        background-color: var(--cr);
+        &::before {
+          background-image: var(--sliderArrowRH);
+        }
+      }
+    }
+    &.next {
+      margin-left: auto;
+    }
+    &.prev {
+      margin-right: auto;
+      &::before {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .ware {
+    padding-top: 1.875rem;
+
+    &__cards {
+      gap: 0.25rem;
+    }
+  }
+
+  .cards-ware {
+    flex-basis: calc((100% - 2 * 0.25rem) / 3);
+    &:hover {
+      .title3 {
+        color: var(--cm);
+      }
+      .btn-alt {
+        opacity: 0;
+      }
+      img {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .facetwp-facet-catnews {
+    position: relative;
+    flex-wrap: nowrap;
+    left: -1em;
+    padding: 0 1em;
+    overflow-x: auto;
+    width: calc(100% + 2em);
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      width: 0;
+      height: 0;
+    }
+
+    .facetwp-radio {
+      font-size: 0.625rem;
+      padding: 0.9375rem 0.875rem 0.75rem 0.875rem;
+    }
+  }
+
+  .pagination__wrapp {
+    margin-top: 1.875rem;
+    .facetwp-facet-pagination {
+      width: 100%;
+      max-width: 22rem;
+    }
+    .facetwp-pager {
+      gap: 0 0.9375rem;
+    }
+    .facetwp-page {
+      font-size: 0.75rem;
+      &.prev,
+      &.next {
+        width: 2.5rem;
+        height: 2.5rem;
+        &::before {
+          width: 0.75rem;
+          height: 0.75rem;
+          background-size: 0.75rem 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .cards-ware {
+    flex-basis: calc((100% - 1 * 0.25rem) / 2);
+  }
+}
