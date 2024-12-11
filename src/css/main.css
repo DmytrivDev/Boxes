@@ -71,6 +71,7 @@
 /* Contacts */
 @import url('./sections/contacts/connection.scss');
 @import url('./sections/contacts/location.scss');
+@import url('./sections/contacts/advice.scss');
 
 /* Policy */
 /* @import url('./sections/policy/policy.scss'); */

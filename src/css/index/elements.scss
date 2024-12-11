@@ -182,6 +182,7 @@
 }
 .input__def {
   display: block;
+  textarea,
   input {
     width: 100%;
     padding: 1.375rem 1.875rem 1.25rem 1.875rem;
@@ -260,6 +261,7 @@
     }
   }
   .input__def {
+    textarea,
     input {
       padding: 0.8125rem 0.625rem;
       border-radius: 0.625rem;
