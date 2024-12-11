@@ -60,7 +60,7 @@
 @import url('./sections/blog/news.scss');
 
 /* Article */
-/* @import url('./sections/article/article.scss'); */
+@import url('./sections/article/similar.scss');
 
 /* Guarantees */
 @import url('./sections/guarantees/cases.scss');

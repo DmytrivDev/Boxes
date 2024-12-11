@@ -34,6 +34,23 @@ if (brands) {
   });
 }
 
+const similar = document.querySelector('.similar');
+if (similar) {
+  initSlider(similar, {
+    perPage: 4,
+    gap: '1.5rem',
+    breakpoints: {
+      960: {
+        perPage: 2,
+        gap: '0.25rem',
+      },
+      775: {
+        perPage: 1,
+      },
+    },
+  });
+}
+
 const gallery = document.querySelector('.gallery');
 if (gallery) {
   initSlider(gallery, {
