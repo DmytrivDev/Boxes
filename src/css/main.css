@@ -69,6 +69,7 @@
 @import url('./sections/delivery/ways.scss');
 
 /* Contacts */
+@import url('./sections/contacts/connection.scss');
 @import url('./sections/contacts/location.scss');
 
 /* Policy */
