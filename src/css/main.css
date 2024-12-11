@@ -34,6 +34,7 @@
 @import url('./sections/home/ourproduct.scss');
 @import url('./sections/home/constrct.scss');
 @import url('./sections/home/brands.scss');
+@import url('./sections/home/making.scss');
 
 /* Production */
 @import url('./sections/production/stages.scss');
@@ -44,9 +45,6 @@
 
 /* Onecase */
 @import url('./sections/onecase/onecase.scss');
-
-/* Services */
-/* @import url('./sections/services/services.scss'); */
 
 /* Service */
 @import url('./sections/service/favor.scss');
