@@ -44,24 +44,6 @@
       width: 100%;
     }
   }
-  .breadcrumbs {
-    ul {
-      li {
-        color: rgba(61, 53, 58, 0.67);
-        &:last-child {
-          span,
-          a {
-            color: var(--cm);
-          }
-        }
-        a {
-          &:hover {
-            color: var(--cm);
-          }
-        }
-      }
-    }
-  }
   .title4 {
     margin-bottom: 1.75rem;
   }

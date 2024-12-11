@@ -29,6 +29,7 @@ export function closeModal(modal) {
 }
 
 function initCloseModal(modal) {
+  const modalId = modal.id;
   const modalContainer = modal.querySelector('.containerModal');
   const btnsCloseModal = modal.querySelectorAll('.closeModal');
 
@@ -38,7 +39,7 @@ function initCloseModal(modal) {
 
   if (modalContainer) {
     modalContainer.addEventListener('click', event => {
-      if (event.target === modalContainer) {
+      if (event.target === modalContainer && modalId !== 'galleryModal') {
         closeModal(modal);
       }
     });

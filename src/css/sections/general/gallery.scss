@@ -1,0 +1,163 @@
+.gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: rgba(61, 53, 58, 0.7);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0.3125rem);
+    -webkit-backdrop-filter: blur(0.3125rem);
+    transition: all 1ms ease-in;
+    transition-delay: 0.15s;
+    opacity: 0;
+  }
+
+  &.isAnimation {
+    -webkit-transition: all 0.15s ease-in;
+    -o-transition: all 0.15s ease-in;
+    transition: all 0.15s ease-in;
+  }
+
+  &.isOpened {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    .gallery__body {
+      transform: scale(1);
+    }
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    padding: 13rem 0 4.0625rem 0;
+    position: relative;
+    width: 100%;
+    max-width: 97.5rem;
+    transform: scale(0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-transition: all 0.15s ease-in;
+    -o-transition: all 0.15s ease-in;
+    transition: all 0.15s ease-in;
+  }
+
+  &__close {
+    position: absolute;
+    top: 9.3rem;
+    right: 0;
+    width: 2.3125rem;
+    height: 2.3125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::before {
+      content: "";
+      width: 2.3125rem;
+      height: 2.3125rem;
+      background-size: 2.3125rem 2.3125rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: var(--closeModalW);
+      transition: all 0.15s ease-in;
+    }
+    &:hover {
+      &::before {
+        background-image: var(--closeModalH);
+      }
+    }
+  }
+
+  &__wrapp {
+    width: 100%;
+    .splide {
+      margin: 0 auto;
+    }
+    .splide__track {
+      overflow: visible;
+    }
+    .splide__slide {
+      div {
+        padding-top: 100%;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+    }
+
+    .slider-def__wrapp {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .gallery {
+    &__container {
+      padding: 0 1em;
+    }
+
+    &__body {
+      padding: 10rem 0 4.0625rem 0;
+    }
+
+    &__close {
+      top: 4.7rem;
+      width: 2.125rem;
+      height: 2.125rem;
+      &::before {
+        width: 2.125rem;
+        height: 2.125rem;
+        background-size: 2.125rem 2.125rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .gallery {
+    &__wrapp {
+      .slider-def__wrapp {
+        margin-top: 4rem;
+      }
+    }
+  }
+}

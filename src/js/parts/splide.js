@@ -34,6 +34,24 @@ if (brands) {
   });
 }
 
+const gallery = document.querySelector('.gallery');
+if (gallery) {
+  initSlider(gallery, {
+    perPage: 1,
+    gap: '1.5rem',
+    width: '35%',
+    breakpoints: {
+      960: {
+        gap: '0.3125rem',
+        width: '60%',
+      },
+      675: {
+        width: '100%',
+      },
+    },
+  });
+}
+
 let ourproductSliderInstance;
 const ourproduct = document.querySelector('.ourproduct');
 
@@ -88,6 +106,23 @@ const stages = document.querySelector('.stages');
 const initStagesSlider = () => {
   if (stages && !stagesSliderInstance) {
     stagesSliderInstance = initSlider(stages, {
+      perPage: 2,
+      gap: '0.25rem',
+      breakpoints: {
+        775: {
+          perPage: 1,
+        },
+      },
+    });
+  }
+};
+
+let onecaseSliderInstance;
+const onecase = document.querySelector('.onecase');
+
+const initOnecaseSlider = () => {
+  if (onecase && !onecaseSliderInstance) {
+    onecaseSliderInstance = initSlider(onecase, {
       perPage: 1,
       gap: '0.25rem',
     });
@@ -115,6 +150,10 @@ const destroySliders = () => {
     stagesSliderInstance.destroy();
     stagesSliderInstance = null;
   }
+  if (onecaseSliderInstance) {
+    onecaseSliderInstance.destroy();
+    onecaseSliderInstance = null;
+  }
 };
 
 const checkViewport = () => {
@@ -123,6 +162,7 @@ const checkViewport = () => {
   initFavorSlider();
   initСontrolSlider();
   initStagesSlider();
+  initOnecaseSlider();
   if (window.innerWidth > 775) {
     destroySliders();
   }
