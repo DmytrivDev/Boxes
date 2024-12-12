@@ -23,6 +23,7 @@
 @import url('./sections/general/box.scss');
 @import url('./sections/general/specific.scss');
 @import url('./sections/general/reviews.scss');
+@import url('./sections/general/anagraph.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');

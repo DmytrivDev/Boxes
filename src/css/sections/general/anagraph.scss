@@ -1,0 +1,237 @@
+.anagraph {
+  &__hero {
+    position: relative;
+    padding-top: 8.75rem;
+    margin-bottom: 5rem;
+  }
+
+  &__halvscr {
+    overflow: hidden;
+    border-radius: 0.625rem;
+    min-height: 41.25rem;
+    width: calc(100% - 0.875rem * 2);
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+
+  &__body {
+  }
+  &__row {
+    font-family: var(--GolosText);
+    padding: 3.75rem 0;
+    border-bottom: 0.125rem solid var(--ch);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 1.625rem;
+
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+
+    & > div {
+      grid-column: 2 / 3;
+      &:first-child {
+        grid-column: 1 / 2;
+        margin-top: 0 !important;
+        & > * {
+          &:first-child {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+      &:last-child {
+        margin-bottom: 0 !important;
+        & > * {
+          &:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    h2,
+    h3,
+    h4 {
+      font-weight: 500;
+      font-family: var(--Gunterz);
+      font-size: 1.125rem;
+      margin: 0.9375rem 0;
+      position: relative;
+      top: 0.25rem;
+    }
+    h2 {
+      font-size: 1.625rem;
+    }
+    h3 {
+      font-size: 1.375rem;
+    }
+    h4 {
+      font-size: 1.125rem;
+    }
+    span {
+      color: var(--cr);
+    }
+    a {
+      color: var(--cr);
+      text-decoration: underline;
+    }
+    b {
+      font-weight: 500;
+    }
+    p {
+      margin-top: 0.9375rem;
+    }
+
+    ul,
+    ol {
+      margin-top: 0.9375rem;
+      li {
+        margin-top: 0.9375rem;
+        &:first-child {
+          margin-top: 0;
+        }
+        p {
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    ol {
+      li {
+        p {
+          padding-left: 1.2rem;
+          &:first-child {
+            color: var(--cr);
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: start;
+        gap: 0 0.9375rem;
+        &::before {
+          content: "";
+          position: relative;
+          top: 0.5rem;
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          background-color: var(--cr);
+        }
+      }
+    }
+
+    .anagraph__images {
+      grid-column: 1 / 3 !important;
+    }
+  }
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.625rem;
+    margin: 2.5rem 0;
+    div {
+      margin: 0;
+    }
+  }
+}
+.size-full {
+  margin: 2.5rem 0;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+.is-resize {
+}
+
+@media screen and (max-width: 960px) {
+  .anagraph {
+    &__hero {
+      padding-top: 3.5625rem;
+      margin-bottom: 1.25rem;
+    }
+
+    &__halvscr {
+      padding-top: 60%;
+      min-height: auto;
+      width: calc(100% - 1em * 2);
+      margin-bottom: 1.25rem;
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 1.25rem 0;
+
+      font-size: 0.8125rem;
+
+      & > div {
+        grid-column: auto;
+        &:first-child {
+          grid-column: auto;
+        }
+      }
+
+      h2,
+      h3,
+      h4 {
+        font-size: 0.75rem;
+        margin: 0.9375rem 0;
+      }
+      h2 {
+        font-size: 0.875rem;
+      }
+      p {
+        margin-top: 0.625rem;
+      }
+
+      ul,
+      ol {
+        margin-top: 0.625rem;
+        li {
+          margin-top: 0.625rem;
+        }
+      }
+      ol {
+        li {
+          p {
+            padding-left: 0.9rem;
+          }
+        }
+      }
+
+      .anagraph__images {
+        grid-column: auto !important;
+      }
+    }
+    &__images {
+      gap: 0.25rem;
+      margin: 1.25rem 0;
+    }
+  }
+}
+
+.size-full {
+  margin: 1.25rem 0;
+}
+
+@media screen and (max-width: 775px) {
+  .anagraph {
+    &__images {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+      margin: 1.25rem 0;
+    }
+  }
+}
