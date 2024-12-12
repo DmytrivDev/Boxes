@@ -148,7 +148,7 @@
       grid-column: 1 / 3 !important;
     }
   }
-  div.anagraph__images {
+  &__images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.625rem;
@@ -226,7 +226,7 @@
         grid-column: auto !important;
       }
     }
-    div.anagraph__images {
+    &__images {
       gap: 0.25rem;
       margin: 1.25rem 0;
     }
@@ -239,7 +239,7 @@
 
 @media screen and (max-width: 775px) {
   .anagraph {
-    &__images {
+    div.anagraph__images {
       grid-template-columns: 1fr;
       gap: 0.25rem;
       margin: 1.25rem 0;
