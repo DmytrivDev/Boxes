@@ -1,32 +1,24 @@
 .banner {
   &__carousell {
     display: flex;
-    align-items: center;
     width: 100%;
-    &:hover {
-      .banner__list {
-        animation-play-state: paused !important;
-        -webkit-animation-play-state: paused !important;
-      }
-    }
   }
   &__list {
     display: flex;
     align-items: center;
+    justify-content: center;
     white-space: nowrap;
     flex-wrap: nowrap;
     gap: 0 3.125rem;
     width: 100%;
     will-change: transform;
 
-    &.carsePartF {
-      animation: animateF 30s -30s linear infinite;
-      -webkit-animation: animateF 30s -30s linear infinite;
-    }
-    &.carsePartS {
-      animation: animateS 30s -15s linear infinite;
-      -webkit-animation: animateS 30s -15s linear infinite;
-    }
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    pointer-events: none;
   }
   &__item {
     display: flex;
@@ -49,44 +41,8 @@
   }
 }
 
-@keyframes animateF {
-  0% {
-    transform: translateX(calc(100% + var(--moveP)));
-    -webkit-transform: translateX(calc(100% + var(--moveP)));
-    -ms-transform: translateX(calc(100% + var(--moveP)));
-  }
-  100% {
-    // -Num.rem це gap - .banner__list * 2
-    transform: translateX(calc(-100% + var(--moveM) - 6.25rem));
-    -webkit-transform: translateX(calc(-100% + var(--moveM) - 6.25rem));
-    -ms-transform: translateX(calc(-100% + var(--moveM) - 6.25rem));
-  }
-}
-
-@keyframes animateS {
-  0% {
-    transform: translateX(var(--moveP));
-    -webkit-transform: translateX(var(--moveP));
-    -ms-transform: translateX(var(--moveP));
-  }
-  100% {
-    // -Num.rem це gap - .banner__list * 2
-    transform: translateX(calc(-200% + var(--moveM) - 6.25rem));
-    -webkit-transform: translateX(calc(-200% + var(--moveM) - 6.25rem));
-    -ms-transform: translateX(calc(-200% + var(--moveM) - 6.25rem));
-  }
-}
-
 @media screen and (max-width: 960px) {
   .banner {
-    &__carousell {
-      &:hover {
-        .banner__list {
-          animation-play-state: running !important;
-          -webkit-animation-play-state: running !important;
-        }
-      }
-    }
     &__list {
       gap: 0 1.5rem;
     }
@@ -98,34 +54,6 @@
     }
     &__name {
       width: 11.112rem;
-    }
-  }
-
-  @keyframes animateF {
-    0% {
-      transform: translateX(calc(100% + var(--moveP)));
-      -webkit-transform: translateX(calc(100% + var(--moveP)));
-      -ms-transform: translateX(calc(100% + var(--moveP)));
-    }
-    100% {
-      // -Num.rem це gap - .banner__list * 2
-      transform: translateX(calc(-100% + var(--moveM) - 3rem));
-      -webkit-transform: translateX(calc(-100% + var(--moveM) - 3rem));
-      -ms-transform: translateX(calc(-100% + var(--moveM) - 3rem));
-    }
-  }
-
-  @keyframes animateS {
-    0% {
-      transform: translateX(var(--moveP));
-      -webkit-transform: translateX(var(--moveP));
-      -ms-transform: translateX(var(--moveP));
-    }
-    100% {
-      // -Num.rem це gap - .banner__list * 2
-      transform: translateX(calc(-200% + var(--moveM) - 3rem));
-      -webkit-transform: translateX(calc(-200% + var(--moveM) - 3rem));
-      -ms-transform: translateX(calc(-200% + var(--moveM) - 3rem));
     }
   }
 }

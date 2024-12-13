@@ -1,35 +1,42 @@
-const bannerCarousell = document.querySelector('.banner__carousell');
+const bannerCarousels = document.querySelectorAll('.banner__carousell');
 
-function initCalcSpeedCarse() {
-  if (bannerCarousell) {
-    const carousellPartF = bannerCarousell.querySelector('.carsePartF');
-    const carousellPartS = bannerCarousell.querySelector('.carsePartS');
+if (bannerCarousels.length > 0) {
+  let lastScrollTop = window.scrollY;
 
-    const listWidthPartF = carousellPartF.scrollWidth; // Повна ширина списку carsePartF
-    const carousellWidth = bannerCarousell.clientWidth; // Ширина видимої області
-
-    const moveValue = listWidthPartF - carousellWidth;
-    bannerCarousell.style.setProperty('--moveP', `${Math.abs(moveValue)}px`);
-    bannerCarousell.style.setProperty('--moveM', `-${Math.abs(moveValue)}px`);
-
-    const childrenCountF = carousellPartF.children.length;
-
-    const speedFactor =
-      parseFloat(bannerCarousell.getAttribute('data-speed')) || 1;
-
-    const calcSpeed = speedFactor * childrenCountF; // Розрахунок швидкості в залежності від кількості елементів списку carsePartF
-
-    carousellPartF.style.animationDelay = `-${calcSpeed}s`;
-    carousellPartS.style.animationDelay = `-${calcSpeed / 2}s`;
-    carousellPartF.style.webkitAnimationDelay = `-${calcSpeed}s`;
-    carousellPartS.style.webkitAnimationDelay = `-${calcSpeed / 2}s`;
-
-    carousellPartF.style.animationDuration = `${calcSpeed}s`;
-    carousellPartS.style.animationDuration = `${calcSpeed}s`;
-    carousellPartF.style.webkitAnimationDuration = `${calcSpeed}s`;
-    carousellPartS.style.webkitAnimationDuration = `${calcSpeed}s`;
+  // Функция для проверки видимости элемента
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
   }
-}
 
-window.addEventListener('resize', initCalcSpeedCarse);
-document.addEventListener('DOMContentLoaded', initCalcSpeedCarse);
+  // Функция для получения текущей скорости в зависимости от ширины экрана
+  function getScrollSpeed() {
+    return window.innerWidth > 960 ? 3 : 2;
+  }
+
+  // Функция для обработки прокрутки
+  function handleScroll(banner) {
+    if (!isElementInViewport(banner)) return;
+
+    const currentScrollTop = window.scrollY;
+    const scrollDirection = currentScrollTop > lastScrollTop ? -1 : 1; // Определяем направление прокрутки
+
+    let translateX = parseFloat(banner.dataset.translateX) || 0;
+    translateX += scrollDirection * getScrollSpeed(); // Используем динамическую скорость
+
+    banner.style.transform = `translateX(${translateX}px)`;
+    banner.dataset.translateX = translateX; // Сохраняем текущее значение для следующего вызова
+  }
+
+  function handleAllScroll() {
+    bannerCarousels.forEach(handleScroll);
+    lastScrollTop = window.scrollY;
+  }
+
+  function init() {
+    window.addEventListener('scroll', handleAllScroll);
+    handleAllScroll();
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+}
