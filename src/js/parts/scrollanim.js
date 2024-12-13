@@ -1,76 +1,51 @@
-const hero = document.querySelector('.hero');
-
-const heroBoxTxt = document.querySelector('.hero__box');
-const heroVec = document.querySelector('.hero__vec');
-const heroFilter = document.querySelector('.hero__filter');
-
-const logoWrapp = document.querySelector('.logo__wrapp');
-const logoLink = document.querySelector('.custom-logo-link');
-const logoTxt = document.querySelector('.logo__txt');
-
-// export function scrollHeroIfVisible() {
-//   if (!hero) return;
-
-//   const heroRect = hero.getBoundingClientRect();
-//   const windowHeight = window.innerHeight;
-
-//   const visibleHeight =
-//     Math.min(heroRect.bottom, windowHeight) - Math.max(heroRect.top, 0);
-
-//   // Проверяем, виден ли блок в окне браузера
-//   const isHeroVisible = heroRect.top < windowHeight && heroRect.bottom > 0;
-
-//   if (isHeroVisible) {
-//     const currentScroll =
-//       window.pageYOffset || document.documentElement.scrollTop;
-//     const visibleHeightClamped = Math.max(0, visibleHeight); // видимая высота
-
-//     window.scrollTo({
-//       top: currentScroll + visibleHeightClamped,
-//       behavior: 'smooth',
-//     });
-//   }
-// }
-const ourcont = document.querySelector('.ourcont__cards');
+const parallax = document.querySelectorAll('.parallax');
 
 function calculateScrollPercentage(section) {
   if (!section) return;
 
-  const sectionRect = section.getBoundingClientRect();
-  const originalHeroHeight = section.offsetHeight; // Оригинальная высота
-  const adjustedHeroHeight = originalHeroHeight + 100; // Искусственное увеличение
+  const parallaxList = section.querySelector('.parallax__list');
 
+  const sectionRect = parallaxList.getBoundingClientRect();
   const windowHeight = window.innerHeight;
+  const centerOfViewport = windowHeight / 1.7;
 
-  // Определяем, сколько части блока section видно в окне браузера
-  const visibleHeight =
-    Math.min(sectionRect.bottom + 100, windowHeight) -
-    Math.max(sectionRect.top, 0);
+  // Відстань від верхнього краю секції до центру екрана
+  const distanceToCenter = centerOfViewport - sectionRect.top;
 
-  // Рассчитываем процент видимости блока
-  const visibilityPercentage =
-    Math.max(0, Math.min(visibleHeight / adjustedHeroHeight, 1)) * 100;
+  // Розрахунок відсотка прогресу від 0 до 100%
+  let visibilityPercentage = (distanceToCenter / sectionRect.height) * 100;
 
-  if (
-    visibilityPercentage.toFixed(0) > 0 &&
-    visibilityPercentage.toFixed(0) <= 100
-  ) {
-    console.log(visibilityPercentage.toFixed(0));
-    applyStylesOurcont(visibilityPercentage.toFixed(0));
-  }
+  // Обмежуємо значення від 0% до 100%
+  visibilityPercentage = Math.max(0, Math.min(visibilityPercentage, 100));
+
+  // console.log(`Відсоток видимості: ${visibilityPercentage.toFixed(0)}%`);
+
+  applyStylesParallax(parallaxList, visibilityPercentage.toFixed(0));
 }
 
-function applyStylesOurcont(visibilityPercentage) {
+function applyStylesParallax(section, visibilityPercentage) {
   const isDesktop = window.innerWidth >= 960;
 
-  const ourcontCards = ourcont.querySelectorAll('.ourcont__cards > li');
-
   // От 0rem до 9rem
-  const topValue = isDesktop ? (visibilityPercentage / 100) * 9 : 0;
+  const topValue1 = isDesktop ? (visibilityPercentage / 100) * 3.75 : 0;
+  const topValue2 = isDesktop ? (visibilityPercentage / 100) * 7.5 : 0;
 
-  ourcontCards[0].style.top = `${topValue}rem`;
-  ourcontCards[1].style.top = `${topValue}rem`;
-  ourcontCards[2].style.top = `${topValue}rem`;
+  // Перевірка наявності класу 'apply-styles'
+  if (!section.classList.contains('apply-styles')) return;
+
+  const parallaxItems = section.querySelectorAll('& > li');
+
+  // Додаємо style.top всім, крім першого елемента
+  parallaxItems.forEach((card, index) => {
+    if (index === 0) return; // Пропускаємо перший елемент
+
+    // Застосовуємо різні значення для другого та третього елемента
+    if (index === 1) {
+      card.style.top = `${topValue1}rem`;
+    } else if (index === 2) {
+      card.style.top = `${topValue2}rem`;
+    }
+  });
 }
 
 function applyStylesBeta(visibilityPercentage) {
@@ -116,68 +91,11 @@ function applyStylesBeta(visibilityPercentage) {
 }
 
 function initScrollAnim() {
-  calculateScrollPercentage(ourcont);
+  parallax?.forEach(section => {
+    calculateScrollPercentage(section);
+  });
 }
 
 window.addEventListener('scroll', initScrollAnim);
 window.addEventListener('resize', initScrollAnim);
 document.addEventListener('DOMContentLoaded', initScrollAnim);
-
-// let lastScrollY = window.scrollY; // Последняя позиция скролла
-// let isAnimating = false; // Флаг анимации
-// const scrollSpeed = 500; // Скорость прокрутки в миллисекундах
-
-// const smoothScrollTo = targetPosition => {
-//   isAnimating = true;
-
-//   const start = window.scrollY;
-//   const distance = targetPosition - start;
-//   const startTime = performance.now();
-
-//   const animateScroll = currentTime => {
-//     const timeElapsed = currentTime - startTime;
-//     const progress = Math.min(timeElapsed / scrollSpeed, 1);
-
-//     const easing = progress; // Линейная анимация
-//     window.scrollTo(0, start + distance * easing);
-
-//     if (progress < 1) {
-//       requestAnimationFrame(animateScroll);
-//     } else {
-//       isAnimating = false; // Завершение анимации
-//     }
-//   };
-
-//   requestAnimationFrame(animateScroll);
-// };
-
-// const isHeroPartiallyVisible = () => {
-//   const heroRect = hero.getBoundingClientRect();
-//   const visibleHeight =
-//     Math.min(heroRect.bottom, window.innerHeight) - Math.max(heroRect.top, 0);
-//   return visibleHeight >= 50; // Минимум 50 пикселей блока видно
-// };
-
-// export const handleScroll = () => {
-//   if (!hero) return;
-//   if (isAnimating) return; // Пропускаем, если анимация уже идет
-
-//   const heroRect = hero.getBoundingClientRect();
-//   const heroTop = window.scrollY + heroRect.top;
-//   const heroBottom = heroTop + hero.offsetHeight;
-
-//   const isScrollingDown = window.scrollY >= lastScrollY; // Направление вниз
-//   const isScrollingUp = !isScrollingDown; // Направление вверх
-
-//   // Скролл вниз
-//   if (isHeroPartiallyVisible() && isScrollingDown) {
-//     smoothScrollTo(heroBottom);
-//   }
-
-//   // Скролл вверх
-//   if (isHeroPartiallyVisible() && isScrollingUp) {
-//     smoothScrollTo(heroTop);
-//   }
-
-//   lastScrollY = window.scrollY; // Обновляем позицию скролла
-// };

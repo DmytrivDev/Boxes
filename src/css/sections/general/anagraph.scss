@@ -145,6 +145,47 @@
       margin: 0;
     }
   }
+  &__aside {
+    p {
+      color: var(--cg);
+      font-family: var(--GolosText);
+      font-size: 1rem;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1.875rem;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.125rem;
+      margin: 0;
+      li {
+        display: block;
+        margin: 0;
+      }
+      a {
+        display: block;
+        border-radius: 0.625rem;
+        border: 0.125rem solid var(--ch);
+        background-color: var(--cw);
+        padding: 1.1563rem 1.1875rem 0.6563rem 1.1875rem;
+        color: var(--cr);
+        font-family: var(--Gunterz);
+        font-size: 1.0625rem;
+        font-weight: 500;
+        line-height: 1.2;
+        text-decoration: none;
+        transition: all 0.15s ease-in;
+        &:hover {
+          background-color: var(--cr);
+          color: var(--cw);
+          border-color: var(--cr);
+        }
+      }
+    }
+  }
 }
 .size-full {
   margin: 2.5rem 0;
@@ -228,19 +269,46 @@
       gap: 0.25rem;
       margin: 0.3125rem 0;
     }
+    &__aside {
+      p {
+        font-size: 0.75rem;
+      }
+      div {
+        gap: 0.625rem;
+      }
+      ul {
+        gap: 0.25rem;
+        margin: 0;
+        li {
+          margin: 0;
+        }
+        a {
+          font-size: 0.625rem;
+          padding: 0.9063rem 0.625rem 10.5px 0.625rem;
+        }
+      }
+    }
   }
 }
-
 .size-full {
   margin: 1.25rem 0;
 }
 
 @media screen and (max-width: 775px) {
   .anagraph {
-    div.anagraph__images {
+    &__images {
       grid-template-columns: 1fr;
       gap: 0.25rem;
       margin: 1.25rem 0;
+    }
+    &__aside {
+      p {
+        text-align: center;
+      }
+      div {
+        flex-direction: column;
+        justify-content: center;
+      }
     }
   }
 }
