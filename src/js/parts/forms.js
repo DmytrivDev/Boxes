@@ -98,8 +98,13 @@ function checkFields(field, type, val) {
   }
 
   if (type === 'email') {
-    if (isEmpty(val) || !isEmail(val)) {
+    if (isEmpty(val)) {
       field.closest('label').classList.add('isRequire');
+      errorMessageElement.textContent = 'Поле не може бути порожнім';
+      errors = true;
+    } else if (!isEmail(val)) {
+      field.closest('label').classList.add('isRequire');
+      errorMessageElement.textContent = 'Email повинен відповідати формату';
       errors = true;
     }
   }
