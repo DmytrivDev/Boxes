@@ -130,6 +130,15 @@
           background-image: var(--sliderArrowRH);
         }
       }
+      &.disabled {
+        cursor: no-drop;
+        opacity: 0.5;
+        border-color: var(--cf) !important;
+        background-color: var(--cu) !important;
+        &::before {
+          background-image: var(--sliderArrowRD) !important;
+        }
+      }
     }
     &.next {
       margin-left: auto;
