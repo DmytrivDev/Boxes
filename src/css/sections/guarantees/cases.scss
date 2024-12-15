@@ -50,9 +50,10 @@
 
     .card-def {
       flex-basis: calc((100% - 2 * 0.25rem) / 2);
-      padding: 1.25rem 4.5rem 0.625rem 0.625rem;
+      padding: 1.25rem 9rem 0.625rem 0.625rem;
       min-height: 8rem;
       .title4 {
+        display: block;
         margin-bottom: 0;
       }
       &__img {

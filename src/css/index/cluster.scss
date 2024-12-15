@@ -39,8 +39,17 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      min-width: 2.5rem;
 
+      &:first-child {
+        overflow: visible;
+        text-overflow: clip;
+        min-width: auto;
+      }
       &:last-child {
+        &::after {
+          display: none;
+        }
         span,
         a {
           color: var(--cw);
@@ -62,11 +71,6 @@
       }
       &::after {
         content: "/";
-      }
-      &:last-child {
-        &::after {
-          display: none;
-        }
       }
     }
   }
@@ -102,6 +106,7 @@
   }
   &.colm1 {
     grid-template-columns: 1fr;
+    padding-right: 11rem;
   }
 }
 .heading__article {
@@ -298,6 +303,9 @@
     grid-template-columns: 1fr;
     align-items: stretch;
     gap: 0.625rem 0;
+    &.colm1 {
+      padding-right: 0;
+    }
     .txt-def1 {
       gap: 0.625rem 0;
     }
