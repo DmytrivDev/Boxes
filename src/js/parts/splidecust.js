@@ -16,12 +16,13 @@ export const initSlider = (container, options = {}) => {
     ...options,
   }).mount();
 
-  const progressbar = container.querySelector('.progressbar__thumb');
-  const arrows = {
+  const navigationElems = {
     next: container.querySelector('.arrows__next'),
     prev: container.querySelector('.arrows__prev'),
     number: container.querySelector('.arrows__number'),
+    progressbar: container.querySelector('.progressbar__thumb'),
   };
+  const { next, prev, number, progressbar } = navigationElems;
 
   const updateSlideState = () => {
     const totalSlides = Math.ceil(
@@ -32,15 +33,15 @@ export const initSlider = (container, options = {}) => {
     const isAtStart = splide.index === 0;
     const isAtEnd = splide.index === splide.Components.Controller.getEnd();
 
-    if (arrows.next && arrows.prev) {
-      arrows.next.disabled = isAtEnd;
-      arrows.prev.disabled = isAtStart;
-      arrows.next.classList.toggle('isDisabled', isAtEnd);
-      arrows.prev.classList.toggle('isDisabled', isAtStart);
+    if (next && prev) {
+      next.disabled = isAtEnd;
+      prev.disabled = isAtStart;
+      next.classList.toggle('isDisabled', isAtEnd);
+      prev.classList.toggle('isDisabled', isAtStart);
     }
 
-    if (arrows.number) {
-      arrows.number.textContent = `${currentIndex}/${totalSlides}`;
+    if (number) {
+      number.textContent = `${currentIndex}/${totalSlides}`;
     }
 
     if (progressbar) {
@@ -53,8 +54,8 @@ export const initSlider = (container, options = {}) => {
     }
   };
 
-  arrows.next?.addEventListener('click', () => splide.go('>'));
-  arrows.prev?.addEventListener('click', () => splide.go('<'));
+  next?.addEventListener('click', () => splide.go('>'));
+  prev?.addEventListener('click', () => splide.go('<'));
 
   if (splide.options.type === 'fade') {
     splide.on('moved', updateSlideState);
@@ -94,4 +95,8 @@ export const initSlider = (container, options = {}) => {
 //       </button>
 //     </div>
 //   </div>
-// </section>;
+
+//   <div class="progressbar">
+//     <div class="progressbar__thumb"></div>
+//   </div>
+// </section>
