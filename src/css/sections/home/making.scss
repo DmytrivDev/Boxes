@@ -142,6 +142,10 @@
       position: static;
       top: 0;
     }
+    &__body {
+      justify-content: stretch;
+      min-height: auto;
+    }
     &__сards {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem 0.25rem;
