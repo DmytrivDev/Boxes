@@ -23,7 +23,7 @@ function calculateScrollPercentage(section) {
 }
 
 function applyStylesParallax(section, visibilityPercentage) {
-  const isDesktop = window.innerWidth >= 960;
+  const isDesktop = window.innerWidth > 960;
   const items = section.querySelectorAll('& > li');
 
   // Визначаємо коефіцієнт для кожного класу

@@ -51,3 +51,19 @@ making?.forEach(section => {
     }
   });
 });
+
+// function checkTop(cont) {
+//   const ww = window.innerHeight;
+//   const contH = cont.getBoundingClientRect().height;
+//   const diff = ww - contH;
+
+//   console.log(diff);
+
+//   if (diff >= 0) {
+//     cont.classList.add('higher');
+//   } else {
+//     cont.classList.remove('higher');
+//   }
+
+//   cont.style.top = diff + 'px';
+// }

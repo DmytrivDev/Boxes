@@ -2,7 +2,13 @@
   position: relative;
   &__container {
     position: sticky;
-    top: 8.125rem + 6.175rem;
+    top: calc(20vh);
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(75vh);
   }
 
   &__wrapp {
