@@ -1,4 +1,10 @@
 .making {
+  position: relative;
+  &__container {
+    position: sticky;
+    top: 8.125rem + 6.175rem;
+  }
+
   &__wrapp {
     position: relative;
   }
@@ -10,6 +16,14 @@
     padding-left: 1.875rem;
 
     li {
+      &.isStep {
+        & > h4,
+        .title4 {
+          span {
+            color: var(--cr);
+          }
+        }
+      }
       &:nth-child(2) {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
@@ -31,6 +45,11 @@
         margin-bottom: 1.25rem;
         span {
           display: none;
+        }
+      }
+      .title4 {
+        span {
+          transition: all 0.15s ease-in;
         }
       }
     }
@@ -55,6 +74,7 @@
     width: 100%;
     padding-left: 1.875rem;
     span {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -63,6 +83,31 @@
       background-color: var(--cw);
       font-weight: 500;
       font-family: var(--GolosText);
+      transition: all 0.15s ease-in;
+      &.isStep {
+        color: var(--cr);
+        &::before,
+        &::after {
+          background-color: var(--cr);
+        }
+      }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 0.125rem;
+        height: 0.5rem;
+        background-color: var(--ch);
+        transform: translateY(-50%);
+        transition: all 0.15s ease-in;
+      }
+      &::before {
+        right: 0;
+      }
+      &::after {
+        left: 0;
+      }
     }
   }
 
@@ -79,14 +124,18 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 40%;
+    width: 0;
     background-color: var(--cr);
-    transition: all 0.15s ease-in;
   }
 }
 
 @media screen and (max-width: 960px) {
   .making {
+    height: auto !important;
+    &__container {
+      position: static;
+      top: 0;
+    }
     &__сards {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem 0.25rem;

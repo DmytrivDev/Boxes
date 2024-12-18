@@ -10,3 +10,4 @@ import './parts/splide.js';
 import './parts/banner.js';
 import './parts/map.js';
 import './parts/parallax.js';
+import './parts/steps.js';
