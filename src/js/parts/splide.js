@@ -10,9 +10,6 @@ sliderDef?.forEach(container => {
         perPage: 3,
         gap: '0.25rem',
       },
-      775: {
-        perPage: 2,
-      },
     },
   });
 });
@@ -26,9 +23,6 @@ if (brands) {
       960: {
         perPage: 5,
         gap: '1.25rem',
-      },
-      775: {
-        perPage: 4,
       },
     },
   });
@@ -56,7 +50,7 @@ if (gallery) {
   initSlider(gallery, {
     perPage: 1,
     gap: '1.5rem',
-    width: '35%',
+    width: '50%',
     breakpoints: {
       960: {
         gap: '0.3125rem',
@@ -87,8 +81,13 @@ const featur = document.querySelector('.featur');
 const initFeaturSlider = () => {
   if (featur && !featurSliderInstance) {
     featurSliderInstance = initSlider(featur, {
-      perPage: 1,
+      perPage: 2,
       gap: '0.25rem',
+      breakpoints: {
+        530: {
+          perPage: 1,
+        },
+      },
     });
   }
 };
@@ -99,8 +98,13 @@ const favor = document.querySelector('.favor');
 const initFavorSlider = () => {
   if (favor && !favorSliderInstance) {
     favorSliderInstance = initSlider(favor, {
-      perPage: 1,
+      perPage: 2,
       gap: '0.25rem',
+      breakpoints: {
+        530: {
+          perPage: 1,
+        },
+      },
     });
   }
 };
@@ -111,8 +115,13 @@ const control = document.querySelector('.control');
 const initСontrolSlider = () => {
   if (control && !controlSliderInstance) {
     controlSliderInstance = initSlider(control, {
-      perPage: 1,
+      perPage: 2,
       gap: '0.25rem',
+      breakpoints: {
+        530: {
+          perPage: 1,
+        },
+      },
     });
   }
 };
@@ -126,7 +135,7 @@ const initStagesSlider = () => {
       perPage: 2,
       gap: '0.25rem',
       breakpoints: {
-        775: {
+        530: {
           perPage: 1,
         },
       },
@@ -147,10 +156,6 @@ const initOnecaseSlider = () => {
 };
 
 const destroySliders = () => {
-  if (ourproductSliderInstance) {
-    ourproductSliderInstance.destroy();
-    ourproductSliderInstance = null;
-  }
   if (featurSliderInstance) {
     featurSliderInstance.destroy();
     featurSliderInstance = null;
@@ -167,6 +172,16 @@ const destroySliders = () => {
     stagesSliderInstance.destroy();
     stagesSliderInstance = null;
   }
+};
+
+const destroySlidersOurproduct = () => {
+  if (ourproductSliderInstance) {
+    ourproductSliderInstance.destroy();
+    ourproductSliderInstance = null;
+  }
+};
+
+const destroySlidersOnecase = () => {
   if (onecaseSliderInstance) {
     onecaseSliderInstance.destroy();
     onecaseSliderInstance = null;
@@ -180,8 +195,14 @@ const checkViewport = () => {
   initСontrolSlider();
   initStagesSlider();
   initOnecaseSlider();
+  if (window.innerWidth > 960) {
+    destroySlidersOnecase();
+  }
   if (window.innerWidth > 775) {
     destroySliders();
+  }
+  if (window.innerWidth > 668) {
+    destroySlidersOurproduct();
   }
 };
 

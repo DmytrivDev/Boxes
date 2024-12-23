@@ -94,6 +94,17 @@
       }
     }
 
+    .splide__list {
+      .splide__slide {
+        min-height: 7.5rem;
+        flex-basis: calc((100% - 3 * 0.25rem) / 4);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .ourproduct {
     .splide__track {
       overflow: visible;
     }
@@ -102,7 +113,6 @@
       gap: 0;
 
       .splide__slide {
-        min-height: 7.5rem;
         flex-basis: auto;
       }
     }

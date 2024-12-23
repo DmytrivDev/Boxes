@@ -39,31 +39,12 @@ function handleMenuItemChildren() {
       menuElement.hasEventListener = true; // Флаг для предотвращения дублирования
     }
   }
-
   function deactivateMobileMenu(menuElement) {
     if (menuElement.hasEventListener) {
       menuElement.removeEventListener('click', openNavItem);
       menuElement.hasEventListener = false; // Сбрасываем флаг
     }
   }
-
-  function activateFooterMenu(listElement) {
-    if (!listElement.hasEventListener) {
-      listElement.addEventListener('click', openFooterItem);
-      listElement.hasEventListener = true; // Флаг для предотвращения дублирования
-    }
-  }
-
-  function deactivateFooterMenu(listElement) {
-    if (listElement.hasEventListener) {
-      listElement.removeEventListener('click', openFooterItem);
-      listElement.hasEventListener = false; // Сбрасываем флаг
-      footerSubMenu.forEach(ul => {
-        ul.style.display = '';
-      });
-    }
-  }
-
   function openNavItem(event) {
     const target = event.target;
     const currentTarget = event.currentTarget;
@@ -92,10 +73,25 @@ function handleMenuItemChildren() {
     }
   }
 
+  function activateFooterMenu(listElement) {
+    if (!listElement.hasEventListener) {
+      listElement.addEventListener('click', openFooterItem);
+      listElement.hasEventListener = true; // Флаг для предотвращения дублирования
+    }
+  }
+  function deactivateFooterMenu(listElement) {
+    if (listElement.hasEventListener) {
+      listElement.removeEventListener('click', openFooterItem);
+      listElement.hasEventListener = false; // Сбрасываем флаг
+      footerSubMenu.forEach(ul => {
+        ul.style.display = '';
+      });
+    }
+  }
   function openFooterItem(event) {
     const target = event.target;
     const footerItem = target.closest('.menu-item-has-children');
-    const footerItemLink = target.closest('.menu-item-has-children > a');
+    const footerItemLink = target.closest('.menu-item-has-children > p');
 
     if (footerItem && footerItemLink === target) {
       event.preventDefault();

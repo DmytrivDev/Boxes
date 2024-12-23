@@ -1,4 +1,3 @@
-import './parts/tools.js';
 import './parts/modal.js';
 import './parts/mobmenu.js';
 import './parts/navigation.js';

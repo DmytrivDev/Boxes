@@ -144,13 +144,6 @@
       background-color: var(--cw);
       transition: all 0.15s ease-in;
 
-      li {
-        &.current-lang {
-          a {
-            color: var(--cr);
-          }
-        }
-      }
       a {
         &:hover {
           color: var(--cr);
@@ -273,7 +266,7 @@
       height: 1.375rem;
       span {
         border-radius: 0.625rem;
-        background-color: var(--cw);
+        background-color: var(--cr);
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
         top: 50%;
         &:first-child {

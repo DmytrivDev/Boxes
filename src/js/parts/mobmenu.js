@@ -1,6 +1,6 @@
 import scrollLock from 'scroll-lock';
 
-import { getScrollBarWidth } from './modal.js';
+import { getScrollBarWidth, closeModal, activeModals } from './modal.js';
 
 const header = document.querySelector('header');
 
@@ -33,6 +33,10 @@ function updateMobMenuBodyMargin() {
 
 function toggleMenu() {
   if (burger && mobMenu) {
+    activeModals.forEach(activeModal => {
+      closeModal(activeModal);
+    });
+
     burger.classList.toggle('isOpened');
     mobMenu.classList.toggle('isOpened');
     headerMain.classList.toggle('addBorder');
@@ -41,7 +45,7 @@ function toggleMenu() {
   }
 }
 
-function closeMenu() {
+export function closeMenu() {
   if (burger && mobMenu) {
     burger.classList.remove('isOpened');
     mobMenu.classList.remove('isOpened');

@@ -53,6 +53,11 @@
     background-color: var(--cw);
     border: 0.125rem solid var(--ch);
     border-radius: 0.5rem;
+    &:hover {
+      .title4 {
+        color: var(--cr);
+      }
+    }
 
     .ac-trigger {
       cursor: default;

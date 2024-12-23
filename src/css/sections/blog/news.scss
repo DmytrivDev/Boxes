@@ -150,13 +150,10 @@
   }
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 675px) {
   .news {
     &__cards {
       grid-template-columns: 1fr;
     }
-  }
-
-  .cards-news {
   }
 }

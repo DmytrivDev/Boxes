@@ -183,7 +183,7 @@
   }
   &__img {
     flex-basis: calc((100% - 1 * 1.5rem) / 2);
-    padding-top: 40%;
+    padding-top: 42.5%;
     border-radius: 0.625rem;
     overflow: hidden;
   }
@@ -242,9 +242,6 @@
     font-family: var(--GolosText);
     line-height: normal;
     letter-spacing: -0.02em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .title4 {
     margin-bottom: auto;
@@ -253,6 +250,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 6;
+    transition: all 0.15s ease-in;
   }
   &__desc {
     font-family: var(--GolosText);
@@ -343,7 +341,7 @@
 
     &__box {
       grid-template-columns: 1fr;
-      gap: 0.625rem 0;
+      gap: 0.625rem;
     }
     &__img {
       flex-basis: calc((100% - 1 * 1.25rem) / 2);
@@ -370,7 +368,7 @@
     gap: 0.625rem 0;
 
     &.card-red {
-      padding: 0.9375rem 8rem 0.625rem 0.625rem;
+      padding: 0.9375rem 7.3rem 0.625rem 0.625rem;
 
       .card-def__img {
         top: 50%;
@@ -386,9 +384,11 @@
     }
     .title4 {
       font-size: 0.75rem;
+      display: block;
     }
     &__desc {
       font-size: 0.75rem;
+      display: block;
     }
     &__img {
       top: 0.9375rem;
@@ -409,6 +409,9 @@
     &__info {
       flex-basis: auto;
     }
+    &__box {
+      grid-template-columns: 1fr 1fr;
+    }
     &__img {
       flex-basis: auto;
       padding-top: 80%;
@@ -422,7 +425,10 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .class {
+@media screen and (max-width: 575px) {
+  .sec-column {
+    &__box {
+      grid-template-columns: 1fr;
+    }
   }
 }

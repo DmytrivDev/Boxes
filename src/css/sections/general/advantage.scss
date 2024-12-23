@@ -53,6 +53,18 @@
       &:nth-child(6) {
         margin-top: -12.5rem;
       }
+      &.card-red {
+        &:hover {
+          .title4 {
+            color: var(--cw);
+          }
+        }
+      }
+      &:hover {
+        .title4 {
+          color: var(--cr);
+        }
+      }
     }
   }
 
@@ -97,8 +109,20 @@
       }
     }
 
+    .card-def {
+      flex-basis: calc((100% - 0.25rem) / 2);
+    }
+
     .heading__sec {
       margin-bottom: 0.9375rem;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .advantage {
+    .card-def {
+      flex-basis: 100%;
     }
   }
 }

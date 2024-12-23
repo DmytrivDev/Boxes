@@ -37,18 +37,3 @@ faqList?.forEach((list, index) => {
     });
   });
 });
-
-// if (faqList) {
-//   new Accordion(faqList, {
-//     duration: 400,
-//     showMultiple: false,
-//   });
-
-//   const panels = faqList.querySelectorAll('.ac-panel');
-
-//   panels.forEach(panel => {
-//     panel.addEventListener('click', event => {
-//       event.stopPropagation();
-//     });
-//   });
-// }

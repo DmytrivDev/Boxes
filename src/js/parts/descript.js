@@ -7,7 +7,6 @@ btnMore?.addEventListener('click', () => {
   btnMore.textContent = isMoreActive ? 'Менше' : 'Більше';
 
   if (isMoreActive) {
-    scrollToBox();
     setTimeout(() => {
       descriptBox.classList.add('isAnim');
     }, 100);
@@ -15,10 +14,3 @@ btnMore?.addEventListener('click', () => {
     descriptBox.classList.remove('isAnim');
   }
 });
-
-function scrollToBox() {
-  window.scrollTo({
-    top: descriptBox.offsetTop - 300,
-    behavior: 'smooth',
-  });
-}

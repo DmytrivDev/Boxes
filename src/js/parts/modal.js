@@ -1,7 +1,8 @@
 import scrollLock from 'scroll-lock';
 
-const activeModals = new Set();
+import { closeMenu } from './mobmenu';
 
+export const activeModals = new Set();
 //* На випадок, якщо header - absolute
 const header = document.querySelector('header');
 
@@ -60,6 +61,7 @@ export function openModal(modalId) {
       modal.dataset.listenerAdded = 'true';
     }
     if (!modal.classList.contains('isOpened')) {
+      closeMenu();
       showModal(modal);
     }
   }

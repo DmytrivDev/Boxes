@@ -20,12 +20,20 @@
       opacity: 0.3;
     }
   }
+  .sec-column__box {
+    &:last-child {
+      margin-top: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 960px) {
   .calc {
     .sec-column {
       flex-direction: column;
+      &__box {
+        grid-template-columns: 1fr;
+      }
     }
     &__body {
       flex-basis: auto;
