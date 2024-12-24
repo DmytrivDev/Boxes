@@ -88,14 +88,6 @@
   padding-top: 100%;
 }
 
-@media screen and (max-width: 1900px) {
-  .onecase {
-    &__cards {
-      margin-left: -2.5rem;
-    }
-  }
-}
-
 @media screen and (max-width: 960px) {
   .onecase {
     &__body {
