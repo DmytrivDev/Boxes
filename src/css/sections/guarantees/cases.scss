@@ -26,6 +26,7 @@
   .card-def {
     flex-basis: calc((100% - 3 * 1.5rem) / 4);
     min-height: 18.75rem;
+    padding: 2.5rem 4rem 6.875rem 1.875rem;
   }
 }
 
@@ -49,8 +50,8 @@
     }
 
     .card-def {
-      flex-basis: calc((100% - 2 * 0.25rem) / 2);
-      padding: 1.25rem 9rem 0.625rem 0.625rem;
+      flex-basis: calc((100% - 1 * 0.25rem) / 2);
+      padding: 1.25rem 5rem 0.625rem 0.625rem;
       min-height: 8rem;
       .title4 {
         display: block;
@@ -66,7 +67,7 @@
   }
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 575px) {
   .cases {
     .card-def {
       flex-basis: 100%;

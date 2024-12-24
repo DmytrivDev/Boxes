@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import glob from 'glob';
+import { globSync } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 
@@ -12,17 +12,23 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: globSync('./src/*.html'),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
               return 'vendor';
             }
           },
-          entryFileNames: 'commonHelpers.js',
+          entryFileNames: chunkInfo => {
+            if (chunkInfo.name === 'commonHelpers') {
+              return 'commonHelpers.js';
+            }
+            return '[name].js';
+          },
         },
       },
       outDir: '../dist',
+      emptyOutDir: true,
     },
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
     css: {
@@ -31,9 +37,6 @@ export default defineConfig(({ command }) => {
           additionalData: ` $class: &; `,
         },
       },
-    },
-    optimizeDeps: {
-      include: ['vite-plugin-html-inject', 'vite-plugin-full-reload'],
     },
   };
 });
