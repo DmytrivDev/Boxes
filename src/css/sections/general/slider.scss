@@ -52,12 +52,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 3rem 0;
     .title3 {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 3;
       transition: all 0.15s ease-in;
     }
   }
@@ -84,13 +80,6 @@
   }
   &__desc {
     font-family: var(--GolosText);
-    p {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 4;
-    }
   }
 
   .splide {
@@ -223,6 +212,7 @@
 
     &__content {
       padding: 1.25rem 0.625rem 0.9375rem 0.625rem;
+      gap: 1.5rem 0;
     }
     &__box {
       grid-template-columns: 1fr;
@@ -241,9 +231,6 @@
     }
     &__desc {
       font-size: 0.75rem;
-      p {
-        -webkit-line-clamp: 3;
-      }
     }
   }
 

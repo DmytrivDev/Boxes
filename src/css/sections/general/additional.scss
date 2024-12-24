@@ -135,9 +135,13 @@
     &__box {
       gap: 2rem 0;
       padding: 1.25rem 0.9375rem 0.9375rem 0.9375rem;
+      .title3 {
+        display: block;
+      }
     }
     &__info {
       font-size: 0.75rem;
+      display: block;
     }
   }
 }

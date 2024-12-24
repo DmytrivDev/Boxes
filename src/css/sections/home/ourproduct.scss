@@ -53,6 +53,9 @@
 
     .card-def {
       padding: 1.25rem 4.5rem 0.625rem 0.625rem;
+      .title4 {
+        display: block;
+      }
     }
 
     .splide {
@@ -80,9 +83,6 @@
     .card-def {
       padding: 1.25rem 0.625rem 4.0625rem 0.625rem;
 
-      .title4 {
-        -webkit-line-clamp: 3;
-      }
       &__desc {
         display: none;
       }

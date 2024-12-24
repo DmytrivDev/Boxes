@@ -24,13 +24,6 @@
     flex-basis: calc((100% - 2 * 1.5rem) / 3);
     min-height: 22.5rem;
     padding: 2.5rem 7rem 1.875rem 1.875rem;
-    &__desc {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 6;
-    }
     &__img {
       top: 1.875rem;
       right: 1.875rem;
@@ -66,9 +59,6 @@
       min-height: 8rem;
       .title4 {
         margin-bottom: 0;
-      }
-      &__desc {
-        display: block;
       }
       &__img {
         top: 0.9375rem;
