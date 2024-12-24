@@ -3,19 +3,9 @@ import scrollLock from 'scroll-lock';
 import { closeMenu } from './mobmenu';
 
 export const activeModals = new Set();
-//* На випадок, якщо header - absolute
-const header = document.querySelector('header');
-
-export function getScrollBarWidth() {
-  const scrollBarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-  return scrollBarWidth;
-}
-window.addEventListener('resize', getScrollBarWidth);
+const initializedModals = new WeakSet();
 
 function showModal(modal) {
-  header.style.paddingRight = `${getScrollBarWidth()}px`;
-
   modal.classList.add('isOpened', 'isAnimation');
   scrollLock.disablePageScroll(modal, { reserveScrollBarGap: true });
   activeModals.add(modal);
@@ -25,11 +15,11 @@ export function closeModal(modal) {
   modal.classList.remove('isOpened', 'isAnimation');
   scrollLock.enablePageScroll(modal);
   activeModals.delete(modal);
-
-  header.style.paddingRight = '';
 }
 
 function initCloseModal(modal) {
+  if (initializedModals.has(modal)) return;
+
   const modalId = modal.id;
   const modalContainer = modal.querySelector('.containerModal');
   const btnsCloseModal = modal.querySelectorAll('.closeModal');
@@ -46,20 +36,22 @@ function initCloseModal(modal) {
     });
   }
 
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      closeModal(modal);
-    }
-  });
+  initializedModals.add(modal);
 }
 
 export function openModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
-    if (!modal.dataset.listenerAdded) {
+    activeModals.forEach(activeModal => {
+      if (activeModal !== modal) {
+        closeModal(activeModal);
+      }
+    });
+
+    if (!initializedModals.has(modal)) {
       initCloseModal(modal);
-      modal.dataset.listenerAdded = 'true';
     }
+
     if (!modal.classList.contains('isOpened')) {
       closeMenu();
       showModal(modal);
@@ -79,4 +71,10 @@ function initOpenModal() {
   });
 }
 
-initOpenModal();
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    const lastModal = Array.from(activeModals).pop();
+    if (lastModal) closeModal(lastModal);
+  }
+});
+document.addEventListener('DOMContentLoaded', initOpenModal);

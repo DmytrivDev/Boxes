@@ -1,8 +1,6 @@
 import scrollLock from 'scroll-lock';
 
-import { getScrollBarWidth, closeModal, activeModals } from './modal.js';
-
-const header = document.querySelector('header');
+import { closeModal, activeModals } from './modal.js';
 
 const headerMain = document.querySelector('.header__main');
 const burger = document.querySelector('.burger');
@@ -23,14 +21,6 @@ function toggleScrollLock() {
   }
 }
 
-function updateMobMenuBodyMargin() {
-  if (headerMain && mobMenuBody) {
-    const headerHeight = headerMain.getBoundingClientRect().height;
-    mobMenuBody.style.marginTop = `${headerHeight}px`;
-    mobMenuBody.style.height = `calc(100% - ${headerHeight}px)`;
-  }
-}
-
 function toggleMenu() {
   if (burger && mobMenu) {
     activeModals.forEach(activeModal => {
@@ -40,7 +30,6 @@ function toggleMenu() {
     burger.classList.toggle('isOpened');
     mobMenu.classList.toggle('isOpened');
     headerMain.classList.toggle('addBorder');
-    header.style.paddingRight = `${getScrollBarWidth()}px`;
     toggleScrollLock();
   }
 }
@@ -50,26 +39,20 @@ export function closeMenu() {
     burger.classList.remove('isOpened');
     mobMenu.classList.remove('isOpened');
     headerMain.classList.remove('addBorder');
-    header.style.paddingRight = '';
     if (mobMenuBody) scrollLock.enablePageScroll(mobMenuBody);
     isScrollLocked = false;
   }
 }
 
 function handleResize() {
-  updateMobMenuBodyMargin();
   if (window.innerWidth > 960) {
     closeMenu();
   }
 }
 
 function initMenu() {
-  if (mobMenuBody && headerMain) {
-    updateMobMenuBodyMargin();
+  if (burger && mobMenu) {
     window.addEventListener('resize', handleResize);
-  }
-
-  if (burger) {
     burger.addEventListener('click', toggleMenu);
   }
 
@@ -93,4 +76,4 @@ function initMenu() {
   }
 }
 
-initMenu();
+document.addEventListener('DOMContentLoaded', initMenu);
