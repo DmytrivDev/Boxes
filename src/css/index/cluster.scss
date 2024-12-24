@@ -175,6 +175,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0 2.5rem;
+    &.colm1 {
+      grid-template-columns: 1fr;
+      padding-right: 11rem;
+    }
     .txt-def1 {
       display: flex;
       flex-direction: column;
@@ -342,6 +346,9 @@
     &__box {
       grid-template-columns: 1fr;
       gap: 0.625rem;
+      &.colm1 {
+        padding-right: 0;
+      }
     }
     &__img {
       flex-basis: calc((100% - 1 * 1.25rem) / 2);
@@ -411,6 +418,9 @@
     }
     &__box {
       grid-template-columns: 1fr 1fr;
+      &.colm1 {
+        padding-right: 11rem;
+      }
     }
     &__img {
       flex-basis: auto;
@@ -429,6 +439,10 @@
   .sec-column {
     &__box {
       grid-template-columns: 1fr;
+      &.colm1 {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+      }
     }
   }
 }

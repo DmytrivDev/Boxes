@@ -275,10 +275,10 @@
             flex-wrap: wrap;
             flex-direction: row;
             padding-bottom: 1.3125rem;
-            gap: 0.875rem 0.9375rem;
+            gap: 0.875rem;
             li {
               margin: 0;
-              flex-basis: calc((100% - 3 * 0.9375rem) / 4);
+              flex-basis: calc((100% - 3 * 0.875rem) / 4);
               overflow: hidden;
             }
             a {
@@ -320,7 +320,7 @@
       }
     }
     &__soc {
-      margin-top: 0.9375rem;
+      margin-top: 0.875rem;
       gap: 0.3125rem;
     }
   }
@@ -333,7 +333,7 @@
         &.menu-item-has-children {
           .sub-menu {
             li {
-              flex-basis: calc((100% - 2 * 0.9375rem) / 3);
+              flex-basis: calc((100% - 2 * 0.875rem) / 3);
             }
           }
         }
