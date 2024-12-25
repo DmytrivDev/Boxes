@@ -2,7 +2,7 @@
   padding: 0 0.875rem;
   display: flex;
   flex-direction: column;
-  min-height: 67.5rem;
+  max-height: 67.5rem;
 
   &.halvscr {
     min-height: 41.25rem;
@@ -39,7 +39,6 @@
     display: flex;
     flex-direction: column;
     .title1 {
-      // max-width: 70rem;
       color: var(--cw);
       flex: 1 1 auto;
     }

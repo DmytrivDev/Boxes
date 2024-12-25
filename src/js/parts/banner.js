@@ -11,7 +11,7 @@ if (bannerCarousels.length > 0) {
 
   // Функция для получения текущей скорости в зависимости от ширины экрана
   function getScrollSpeed() {
-    return window.innerWidth > 960 ? 3 : 2;
+    return window.innerWidth > 960 ? 5 : 3;
   }
 
   // Функция для обработки прокрутки
