@@ -1,3 +1,4 @@
+import 'lazysizes';
 import './parts/modal.js';
 import './parts/mobmenu.js';
 import './parts/navigation.js';
