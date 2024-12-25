@@ -202,6 +202,10 @@
       }
     }
 
+    .splide__track {
+      overflow: visible;
+    }
+
     .breadcrumbs {
       max-width: calc(100% - 0.625rem * 2);
     }
