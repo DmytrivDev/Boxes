@@ -184,6 +184,10 @@
       grid-column: auto;
       grid-row: auto;
       margin-bottom: 1.875rem;
+
+      .splide__track {
+        overflow: visible;
+      }
     }
 
     &__content {
@@ -202,17 +206,8 @@
       }
     }
 
-    .splide__track {
-      overflow: visible;
-    }
-
     .breadcrumbs {
       max-width: calc(100% - 0.625rem * 2);
     }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .onecase {
   }
 }
