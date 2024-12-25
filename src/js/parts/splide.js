@@ -54,7 +54,10 @@ if (gallery) {
     breakpoints: {
       960: {
         gap: '0.3125rem',
-        width: '60%',
+        width: '70%',
+      },
+      875: {
+        width: '80%',
       },
       675: {
         width: '100%',
