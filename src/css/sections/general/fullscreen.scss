@@ -54,7 +54,7 @@
       gap: 0.75rem 2.5rem;
       color: var(--cw);
       p {
-        max-width: 22.1875rem;
+        max-width: 28.125rem;
       }
     }
   }
@@ -118,6 +118,10 @@
     }
 
     &__body {
+      br {
+        display: none;
+      }
+
       gap: 6rem;
       padding: 2.9375rem 0 2.5rem 0;
       .title1 {

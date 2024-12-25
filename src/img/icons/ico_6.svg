@@ -1,15 +1,13 @@
-<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2109_4141)">
-<path d="M52.5 13.125H7.5C6.46447 13.125 5.625 13.9645 5.625 15V45C5.625 46.0355 6.46447 46.875 7.5 46.875H52.5C53.5355 46.875 54.375 46.0355 54.375 45V15C54.375 13.9645 53.5355 13.125 52.5 13.125Z" stroke="#ED6E77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.625 20.25C12.6605 20.25 13.5 19.4105 13.5 18.375C13.5 17.3395 12.6605 16.5 11.625 16.5C10.5895 16.5 9.75 17.3395 9.75 18.375C9.75 19.4105 10.5895 20.25 11.625 20.25Z" fill="#ED6E77"/>
-<path d="M14.625 20.25C15.6605 20.25 16.5 19.4105 16.5 18.375C16.5 17.3395 15.6605 16.5 14.625 16.5C13.5895 16.5 12.75 17.3395 12.75 18.375C12.75 19.4105 13.5895 20.25 14.625 20.25Z" fill="#ED6E77"/>
-<path d="M39.375 39.375H46.875" stroke="#ED6E77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M28.125 39.375H31.875" stroke="#ED6E77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.625 22.7109H54.375" stroke="#ED6E77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<clipPath id="clip0_2109_4141">
-<rect width="60" height="60" fill="white"/>
-</clipPath>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
+  <g clip-path="url(#a)">
+    <path stroke="#ED6E77" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M52.5 13.125h-45c-1.036 0-1.875.84-1.875 1.875v30c0 1.035.84 1.875 1.875 1.875h45c1.035 0 1.875-.84 1.875-1.875V15c0-1.036-.84-1.875-1.875-1.875Z"/>
+    <path fill="#ED6E77" d="M11.625 20.25a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75Z"/>
+    <path fill="#ED6E77" d="M14.625 20.25a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75Z"/>
+    <path stroke="#ED6E77" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M39.375 39.375h7.5M28.125 39.375h3.75M5.625 22.71h48.75"/>
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h60v60H0z"/>
+    </clipPath>
+  </defs>
 </svg>

@@ -117,6 +117,10 @@
     }
 
     .cards-constrct {
+      br {
+        display: none;
+      }
+
       padding: 0.9375rem 0.625rem;
       min-height: 10rem;
       &:nth-child(5),

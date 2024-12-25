@@ -69,6 +69,10 @@
 
 @media screen and (max-width: 960px) {
   .advice {
+    br {
+      display: none;
+    }
+
     &__container {
       grid-template-columns: 1fr;
       align-items: stretch;

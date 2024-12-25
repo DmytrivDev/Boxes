@@ -26,6 +26,10 @@
 
 @media screen and (max-width: 960px) {
   .specific {
+    br {
+      display: none;
+    }
+
     padding-top: 1.875rem;
 
     &__body {

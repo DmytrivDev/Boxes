@@ -65,16 +65,17 @@
       &:nth-child(6) {
         margin-top: -12.5rem;
       }
+      &:hover {
+        .title4 {
+          color: var(--cr);
+        }
+      }
       &.card-red {
+
         &:hover {
           .title4 {
             color: var(--cw);
           }
-        }
-      }
-      &:hover {
-        .title4 {
-          color: var(--cr);
         }
       }
     }

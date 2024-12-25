@@ -44,6 +44,10 @@
     }
 
     .cards-cont {
+      br {
+        display: none;
+      }
+
       padding: 0.9375rem 0.625rem 0.9375rem 0.625rem;
       min-height: 8.125rem;
       flex-basis: calc((100% - 1 * 0.25rem) / 2);

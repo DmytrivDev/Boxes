@@ -150,6 +150,9 @@
 
   .cards-news {
     min-height: auto;
+    br {
+      display: none;
+    }
 
     &__img {
       padding-top: 60%;

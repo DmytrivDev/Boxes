@@ -162,6 +162,10 @@
   }
 
   .cards-ware {
+    br {
+      display: none;
+    }
+
     flex-basis: calc((100% - 2 * 0.25rem) / 3);
     &:hover {
       .title3 {

@@ -152,7 +152,7 @@
 
   &__info {
     flex-basis: calc((100% - 1 * 1.5rem) / 2);
-    padding-right: 8rem;
+    padding-right: 5rem;
     display: flex;
     flex-direction: column;
 
@@ -222,9 +222,13 @@
   min-height: 20.6875rem;
 
   &.card-red {
-    padding: 2.5rem 15rem 1.875rem 1.875rem;
     background-color: var(--cr);
+    padding: 2.5rem 14rem 1.875rem 1.875rem;
 
+    .btn-alt {
+      padding: 1rem 2rem 0.75rem 2rem;
+      font-size: 0.875rem;
+    }
     .card-def__lead {
       color: rgba(255, 255, 255, 0.7);
     }
@@ -293,6 +297,10 @@
   }
 
   .heading__sec {
+    br {
+      display: none;
+    }
+
     grid-template-columns: 1fr;
     align-items: stretch;
     gap: 0.625rem 0;
@@ -333,6 +341,10 @@
   }
 
   .sec-column {
+    br {
+      display: none;
+    }
+
     gap: 1.25rem;
 
     &__info {
@@ -369,6 +381,10 @@
   }
 
   .card-def {
+    br {
+      display: none;
+    }
+
     flex-basis: calc((100% - 1 * 0.25rem) / 2);
     padding: 0.9375rem 5rem 0.625rem 0.625rem;
     min-height: 8.125rem;
@@ -377,6 +393,10 @@
     &.card-red {
       padding: 0.9375rem 7.3rem 0.625rem 0.625rem;
 
+      .btn-alt {
+        padding: 0.6875rem 0.6875rem 0.4688rem 0.6875rem;
+        font-size: 0.625rem;
+      }
       .card-def__img {
         top: 50%;
         right: -5rem;

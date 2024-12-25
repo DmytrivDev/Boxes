@@ -185,6 +185,9 @@
     }
 
     &__wrapp {
+      br {
+        display: none;
+      }
       padding: 6.5625rem 0 2.5rem 0;
     }
     &__desc {
@@ -205,6 +208,9 @@
   }
 
   .cards-cont {
+    br {
+      display: none;
+    }
     flex-basis: calc((100% - 2 * 0.25rem) / 3);
     padding: 0.9375rem 5rem 0.9375rem 0.625rem;
     min-height: 8.125rem;

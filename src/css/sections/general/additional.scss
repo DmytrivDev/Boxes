@@ -129,6 +129,10 @@
   }
 
   .card-addit {
+    br {
+      display: none;
+    }
+
     flex-basis: calc((100% - 1 * 0.25rem) / 2);
     min-height: 11.25rem;
 

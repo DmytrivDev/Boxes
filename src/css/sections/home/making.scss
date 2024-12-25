@@ -147,6 +147,9 @@
       min-height: auto;
     }
     &__сards {
+      br {
+        display: none;
+      }
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem 0.25rem;
       padding-left: 0;
