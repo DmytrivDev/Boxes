@@ -437,9 +437,8 @@
       flex-basis: auto;
     }
     &__box {
-      grid-template-columns: 1fr 1fr;
       &.colm1 {
-        padding-right: 11rem;
+        grid-template-columns: 1fr;
       }
     }
     &__img {
@@ -452,17 +451,5 @@
 @media screen and (max-width: 775px) {
   .card-def {
     flex-basis: 100%;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .sec-column {
-    &__box {
-      grid-template-columns: 1fr;
-      &.colm1 {
-        grid-template-columns: 1fr;
-        padding-right: 0;
-      }
-    }
   }
 }

@@ -1,4 +1,7 @@
-import 'lazysizes';
+import LazyLoad from 'lazyload';
+let images = document.querySelectorAll('.lazyload');
+new LazyLoad(images);
+
 import './parts/modal.js';
 import './parts/mobmenu.js';
 import './parts/navigation.js';
