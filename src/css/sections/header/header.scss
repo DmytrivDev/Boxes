@@ -42,6 +42,12 @@
     margin-left: auto;
     display: flex;
     align-items: center;
+
+    .btn-def {
+      .el-mob {
+        display: none;
+      }
+    }
   }
 
   &__tel {
@@ -175,8 +181,12 @@
       margin-right: 3.15rem;
 
       .btn-def {
+        padding: 0.5625rem 0.875rem 0.4375rem 0.875rem;
         .el-desc {
           display: none;
+        }
+        .el-mob {
+          display: block;
         }
       }
     }
@@ -215,10 +225,6 @@
       width: 3.8125rem;
       margin-right: auto;
       top: 0;
-    }
-
-    .btn-def {
-      padding: 0.5625rem 0.875rem 0.4375rem 0.875rem;
     }
   }
 
