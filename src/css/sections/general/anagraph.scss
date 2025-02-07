@@ -17,7 +17,7 @@
   &__body {
   }
   &__row {
-    font-family: var(--GolosText);
+    font-family: var(--GolosText), Verdana, sans-serif;
     padding: 3.75rem 0;
     border-bottom: 0.125rem solid var(--ch);
     display: grid;
@@ -64,8 +64,8 @@
     h2,
     h3,
     h4 {
-      font-weight: 500;
-      font-family: var(--Gunterz);
+      font-weight: 700;
+      font-family: var(--Gunterz), Verdana, sans-serif;
       font-size: 1.125rem;
       margin: 0.9375rem 0;
       position: relative;
@@ -154,7 +154,7 @@
   &__aside {
     p {
       color: var(--cg);
-      font-family: var(--GolosText);
+      font-family: var(--GolosText), Verdana, sans-serif;
       font-size: 1rem;
     }
     div {
@@ -162,28 +162,46 @@
       align-items: center;
       gap: 1.875rem;
     }
-    ul {
+    ul,
+    .addtoany_list {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem 1.125rem;
       margin: 0;
+      font-size: 1rem !important;
       li {
         display: block;
         margin: 0;
       }
       a {
-        display: block;
-        border-radius: 0.625rem;
-        border: 0.125rem solid var(--ch);
-        background-color: var(--cw);
-        padding: 1.1563rem 1.1875rem 0.6563rem 1.1875rem;
+        display: block !important;
+        border-radius: 0.625rem !important;
+        border: 0.125rem solid var(--ch) !important;
+        background-color: var(--cw) !important;
+        padding: 1.1563rem 1.1875rem 0.6563rem 1.1875rem !important;
         color: var(--cr);
-        font-family: var(--Gunterz);
-        font-size: 1.0625rem;
-        font-weight: 500;
-        line-height: 1.2;
+        font-family: var(--Gunterz), Verdana, sans-serif;
+        font-size: 1.0625rem !important;
+        font-weight: 700;
+        line-height: 1.2 !important;
         text-decoration: none;
         transition: all 0.15s ease-in;
+        .a2a_svg {
+          display: none !important;
+        }
+        .a2a_label {
+          font-size: 1.0625rem !important;
+          font-weight: 500 !important;
+          line-height: 1.2 !important;
+          position: static !important;
+          width: auto !important;
+          height: auto !important;
+          color: var(--cr);
+          display: block !important;
+          border-radius: 0 !important;
+          clip-path: unset !important;
+          -webkit-clip-path: unset !important;
+        }
         &:hover {
           background-color: var(--cr);
           color: var(--cw);

@@ -54,7 +54,7 @@ function submitForm(e) {
       const type = field.type;
       const val = field.value;
 
-      if (checkFields(field, type, val)) {
+      if (checkFields(field, type, val, e)) {
         errors += 1;
 
         field.addEventListener('change', () => removeErrors(field));
@@ -77,22 +77,25 @@ function submitForm(e) {
   }
 }
 
-function checkFields(field, type, val) {
+function checkFields(field, type, val, form) {
   let errors = false;
 
   const errorMessageElement = field.closest('label').querySelector('.required');
   errorMessageElement.textContent = '';
+  const error1 = form.target.dataset.err1;
+  const error2 = form.target.dataset.err2;
+  const error3 = form.target.dataset.err3;
+  const error4 = form.target.dataset.err4;
 
   if (type === 'text') {
     const nameRegex = /^[а-яА-ЯёЁіІїЇєЄґҐ'’ -]+$/u;
     if (isEmpty(val)) {
       field.closest('label').classList.add('isRequire');
-      errorMessageElement.textContent = 'Поле не може бути порожнім';
+      errorMessageElement.textContent = error1;
       errors = true;
     } else if (!nameRegex.test(val)) {
       field.closest('label').classList.add('isRequire');
-      errorMessageElement.textContent =
-        'Ім’я повинно містити лише кириличні символи';
+      errorMessageElement.textContent = error2;
       errors = true;
     }
   }
@@ -100,11 +103,11 @@ function checkFields(field, type, val) {
   if (type === 'email') {
     if (isEmpty(val)) {
       field.closest('label').classList.add('isRequire');
-      errorMessageElement.textContent = 'Поле не може бути порожнім';
+      errorMessageElement.textContent = error1;
       errors = true;
     } else if (!isEmail(val)) {
       field.closest('label').classList.add('isRequire');
-      errorMessageElement.textContent = 'Email повинен відповідати формату';
+      errorMessageElement.textContent = error3;
       errors = true;
     }
   }
@@ -112,12 +115,11 @@ function checkFields(field, type, val) {
   if (type === 'tel') {
     if (isEmpty(val)) {
       field.closest('label').classList.add('isRequire');
-      errorMessageElement.textContent = 'Поле не може бути порожнім';
+      errorMessageElement.textContent = error1;
       errors = true;
     } else if (!isMaskFilledTel(field)) {
       field.closest('label').classList.add('isRequire');
-      errorMessageElement.textContent =
-        'Телефон повинен відповідати міжнародному формату';
+      errorMessageElement.textContent = error4;
       errors = true;
     }
   }

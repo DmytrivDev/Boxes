@@ -44,7 +44,7 @@
       }
       p {
         color: var(--cg);
-        font-family: var(--GolosText);
+        font-family: var(--GolosText), Verdana, sans-serif;
         font-size: 0.9375rem;
         line-height: normal;
         letter-spacing: -0.02em;
@@ -88,7 +88,7 @@
       height: 1.75rem;
       background-color: var(--cw);
       font-weight: 500;
-      font-family: var(--GolosText);
+      font-family: var(--GolosText), Verdana, sans-serif;
       transition: all 0.15s ease-in;
       &.isStep {
         color: var(--cr);

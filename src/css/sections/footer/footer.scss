@@ -26,7 +26,7 @@
     letter-spacing: -0.02em;
     p {
       color: var(--cg);
-      font-family: var(--GolosText);
+      font-family: var(--GolosText), Verdana, sans-serif;
       line-height: 1.2;
       margin-bottom: 1.125rem;
     }
@@ -47,7 +47,7 @@
       margin-top: 0.25rem;
       font-size: 1.125rem;
       line-height: 1.4;
-      font-family: var(--GolosText);
+      font-family: var(--GolosText), Verdana, sans-serif;
     }
     ul {
       display: flex;
@@ -77,7 +77,7 @@
         width: fit-content;
         display: block;
         color: var(--cg);
-        font-family: var(--GolosText);
+        font-family: var(--GolosText), Verdana, sans-serif;
         line-height: 1.2;
         letter-spacing: -0.02em;
         margin-bottom: 1.5625rem;
@@ -240,7 +240,8 @@
           position: relative;
           font-size: 0.75rem;
           color: var(--cm);
-          font-family: var(--Gunterz);
+          font-family: var(--Gunterz), Verdana, sans-serif;
+          font-weight: 700;
           margin-bottom: 0;
 
           &::after {

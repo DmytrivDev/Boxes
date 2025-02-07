@@ -42,7 +42,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.75rem;
-    font-family: var(--GolosText);
+    font-family: var(--GolosText), Verdana, sans-serif;
   }
 
   &__box {
@@ -67,7 +67,7 @@
     }
     .txt-def1 {
       color: var(--cg);
-      font-family: var(--GolosText);
+      font-family: var(--GolosText), Verdana, sans-serif;
     }
   }
   &__icon {

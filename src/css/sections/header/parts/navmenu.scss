@@ -8,7 +8,7 @@
       margin-right: 4rem;
 
       .current-menu-item {
-        a {
+        & > a {
           color: var(--cr) !important;
         }
       }
@@ -111,7 +111,7 @@
       }
       &__list {
         .current-menu-item {
-          a {
+          & > a {
             color: var(--cr) !important;
           }
         }

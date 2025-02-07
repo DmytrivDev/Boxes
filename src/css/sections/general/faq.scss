@@ -21,7 +21,7 @@
     justify-content: space-between;
     gap: 3rem;
     .title4 {
-      font-family: var(--Ermilov);
+      font-family: var(--Ermilov), Verdana, sans-serif;
       transition: all 0.15s ease-in;
     }
     &::after {
@@ -37,7 +37,7 @@
     }
   }
   &__desc {
-    font-family: var(--GolosText);
+    font-family: var(--GolosText), Verdana, sans-serif;
     line-height: 1.4;
     letter-spacing: -0.02em;
     padding: 0 6.5625rem 1.25rem 1.87rem;

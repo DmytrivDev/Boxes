@@ -36,7 +36,7 @@
       position: relative;
       top: 1.25rem;
       color: var(--cg);
-      font-family: var(--Manrope);
+      font-family: var(--Manrope), Verdana, sans-serif;
       font-size: 1.0625rem;
       line-height: normal;
     }
@@ -52,7 +52,7 @@
   }
   &__desc {
     color: var(--cg);
-    font-family: var(--Manrope);
+    font-family: var(--Manrope), Verdana, sans-serif;
     font-size: 0.875rem;
     line-height: normal;
   }

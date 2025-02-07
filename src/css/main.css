@@ -1,34 +1,34 @@
 /* Settings */
 /* @import url('./settings/fonts.scss'); */
 @import url('./index/variables.scss');
-@import url('./index/icons.scss');
 @import url('./settings/default.scss');
 
 @import url('./settings/general.scss');
-@import url('./index/embeded.scss');
-@import url('./index/elements.scss');
-@import url('./index/cluster.scss');
-
-/* General */
-@import url('./sections/general/modal.scss');
-@import url('./sections/general/gallery.scss');
-@import url('./sections/general/banner.scss');
-@import url('./sections/general/fullscreen.scss');
-@import url('./sections/general/descript.scss');
-@import url('./sections/general/ourcont.scss');
-@import url('./sections/general/faq.scss');
-@import url('./sections/general/additional.scss');
-@import url('./sections/general/advantage.scss');
-@import url('./sections/general/slider.scss');
-@import url('./sections/general/box.scss');
-@import url('./sections/general/specific.scss');
-@import url('./sections/general/reviews.scss');
-@import url('./sections/general/anagraph.scss');
 
 /* Header */
 @import url('./sections/header/header.scss');
 @import url('./sections/header/parts/navmenu.scss');
 @import url('./sections/header/parts/mobmenu.scss');
+
+/* General */
+@import url('./sections/general/fullscreen.scss');
+@import url('./sections/general/slider.scss');
+@import url('./sections/general/banner.scss');
+@import url('./index/elements.scss');
+@import url('./index/cluster.scss');
+@import url('./sections/general/modal.scss');
+@import url('./sections/general/gallery.scss');
+@import url('./sections/general/descript.scss');
+@import url('./sections/general/ourcont.scss');
+@import url('./sections/general/faq.scss');
+@import url('./sections/general/additional.scss');
+@import url('./sections/general/advantage.scss');
+@import url('./sections/general/box.scss');
+@import url('./sections/general/specific.scss');
+@import url('./sections/general/reviews.scss');
+@import url('./sections/general/anagraph.scss');
+@import url('./index/embeded.scss');
+@import url('./index/icons.scss');
 
 /* Home */
 @import url('./sections/home/ourproduct.scss');
